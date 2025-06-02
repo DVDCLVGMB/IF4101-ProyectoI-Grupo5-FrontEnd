@@ -4,11 +4,12 @@ import { ClienteService } from '@app/services/cliente/cliente.service';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ClienteSeleccionado } from '@app/services/rutina-cliente/cliente-seleccionado.service'
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-clientes-tab',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, TranslateModule],
   templateUrl: './clientes-tab.component.html',
   styleUrls: ['./clientes-tab.component.css']
 })

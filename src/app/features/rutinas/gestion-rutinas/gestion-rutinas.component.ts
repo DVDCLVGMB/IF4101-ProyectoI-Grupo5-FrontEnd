@@ -7,12 +7,13 @@ import { RutinaService } from '@app/services/rutina/rutina.service';
 import { RutinaCompletaDTO } from '@app/domain/dto/RutinaCompletaDTO';
 import { ClienteService } from '@app/services/cliente/cliente.service';
 import { forkJoin } from 'rxjs';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @Component({
   selector: 'app-gestion-rutinas',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, TranslateModule],
   templateUrl: './gestion-rutinas.component.html',
   styleUrls: ['./gestion-rutinas.component.css']
 })

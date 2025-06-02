@@ -1,0 +1,106 @@
+{
+  "sidebar": {
+    "title": "Bulk Gym",
+    "panelPrincipal": "Dashboard",
+    "clientes": "Clients",
+    "medidasCorporales": "Body Measurements",
+    "empleados": "Employees",
+    "instructores": "Instructors",
+    "ejercicios": "Exercises",
+    "rutinasDelCliente": "Customer’s Routines",
+    "categoriasEjercicio": "Exercise Categories",
+    "cerrarSesion": "Sign Out"
+  },
+  "dashboard": {
+    "panelDeControl": "Control Panel",
+    "bienvenida": "Welcome, consult and manage your information quickly and easily",
+    "clientesTotales": "Total Clients",
+    "clientesActivos": "Active Clients",
+    "clientesInactivos": "Inactive Clients",
+    "ejerciciosRegistrados": "Registered Exercises",
+    "rutinasActivas": "Active Routines",
+    "accesoRapido": "Quick Access",
+    "gestionDeClientes": "Client Management",
+    "gestionDeEjercicios": "Exercise Management",
+    "gestionDeEmpleados": "Employee Management",
+    "gestionDeMedidasCorporales": "Body Measurements Management"
+  },
+  "clients": {
+    "gestionDeClientes": "Client Management",
+    "buscarPorNombreOTelefono": "Search by Name or Phone",
+    "nuevoCliente": "New Client",
+    "cliente": "Client",
+    "cedula": "ID Number",
+    "fechaNacimiento": "Birth Date",
+    "telefono": "Phone",
+    "correoElectronico": "Email",
+    "direccion": "Address",
+    "contactoEmergencia": "Emergency Contact",
+    "activo": "Active",
+    "si": "Yes",
+    "no": "No",
+    "acciones": "Actions",
+    "editar": "Edit",
+    "borrar": "Delete"
+  },
+  "measurements": {
+    "gestionDeMedidasCorporales": "Body Measurements Management",
+    "nuevaMedida": "New Measurement",
+    "buscarMedidas": "Search Measurements...",
+    "listadoDeMedidasRegistradas": "List of Registered Measurements",
+    "imagen": "Image",
+    "nombre": "Name",
+    "unidad": "Unit",
+    "acciones": "Actions",
+    "editar": "Edit",
+    "borrar": "Delete"
+  },
+  "employees": {
+    "gestionDeEmpleados": "Employee Management",
+    "buscarPorNombreRolOTelefono": "Search by Name, Role or Phone",
+    "nuevoEmpleado": "New Employee",
+    "empleado": "Employee",
+    "cedula": "ID Number",
+    "fechaNacimiento": "Birth Date",
+    "telefono": "Phone",
+    "correoElectronico": "Email",
+    "direccion": "Address",
+    "contactoEmergencia": "Emergency Contact",
+    "rol": "Role",
+    "acciones": "Actions",
+    "editar": "Edit",
+    "borrar": "Delete"
+  },
+  "instructors": {
+    "buscarInstructor": "Search Instructor...",
+    "instructores": "Instructors",
+    "instructor": "Instructor",
+    "telefono": "Phone",
+    "email": "Email",
+    "fechaNacimiento": "Birth Date"
+  },
+  "exercises": {
+    "listadoDeEjerciciosRegistrados": "List of Registered Exercises",
+    "nuevoEjercicio": "New Exercise",
+    "imagen": "Image",
+    "nombreDelEjercicio": "Exercise Name",
+    "categoria": "Category",
+    "acciones": "Actions",
+    "editar": "Edit",
+    "borrar": "Delete"
+  },
+  "clientRoutines": {
+    "cedula": "ID Number",
+    "idCliente": "Client ID",
+    "tel": "Phone"
+  },
+  "categories": {
+    "gestionDeCategoriasDeEjercicio": "Exercise Categories Management",
+    "buscarCategoria": "Search Category...",
+    "nuevaCategoria": "New Category",
+    "nombreDeCategoria": "Category Name",
+    "acciones": "Actions",
+    "editar": "Edit",
+    "borrar": "Delete"
+  }
+}

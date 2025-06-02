@@ -1,68 +1,69 @@
+<!-- layout.component.html -->
 <div class="d-flex min-vh-100">
   <!-- Sidebar -->
   <div class="bg-dark text-white p-3" style="width: 250px;">
-    <h4 class="mb-4 text-center fw-bold">Bulk Gym</h4>
+    <!-- Título fijo “Bulk Gym” traducible -->
+    <h4 class="mb-4 text-center fw-bold">
+      {{ 'sidebar.title' | translate }}
+    </h4>
 
     <div class="d-flex flex-column gap-2">
       <button class="btn btn-sidebar"
               [class.active]="esRutaActiva('/dashboard')"
               (click)="navegar('/dashboard')">
-        Panel Principal
+        {{ 'sidebar.panelPrincipal' | translate }}
       </button>
 
       <button class="btn btn-sidebar"
               [class.active]="esRutaActiva('/clientes')"
               (click)="navegar('/clientes')">
-        Clientes
+        {{ 'sidebar.clientes' | translate }}
       </button>
-
-
 
       <button class="btn btn-sidebar"
               [class.active]="esRutaActiva('/medidas-corporales')"
               (click)="navegar('/medidas-corporales')">
-        Medidas Corporales
+        {{ 'sidebar.medidasCorporales' | translate }}
       </button>
 
       <button class="btn btn-sidebar"
               [class.active]="esRutaActiva('/empleados')"
               (click)="navegar('/empleados')">
-        Empleados
+        {{ 'sidebar.empleados' | translate }}
       </button>
 
       <button class="btn btn-sidebar"
               [class.active]="esRutaActiva('/instructores')"
               (click)="navegar('/instructores')">
-        Instructores
+        {{ 'sidebar.instructores' | translate }}
       </button>
 
       <button class="btn btn-sidebar"
               [class.active]="esRutaActiva('/ejercicios')"
               (click)="navegar('/ejercicios')">
-        Ejercicios
+        {{ 'sidebar.ejercicios' | translate }}
       </button>
 
       <button class="btn btn-sidebar"
               [class.active]="esRutaActiva('/instructores/clientes')"
               (click)="navegar('/instructores/clientes')">
-        Rutinas del Cliente
+        {{ 'sidebar.rutinasDelCliente' | translate }}
       </button>
 
       <button class="btn btn-sidebar"
               [class.active]="esRutaActiva('/categorias')"
               (click)="navegar('/categorias')">
-        Categorías de Ejercicio
+        {{ 'sidebar.categoriasEjercicio' | translate }}
       </button>
 
       <button class="btn btn-sidebar"
               (click)="cerrarSesion()">
-        Cerrar Sesión
+        {{ 'sidebar.cerrarSesion' | translate }}
       </button>
     </div>
-    
   </div>
 
-  <!-- Main content hola -->
+  <!-- Main content -->
   <div class="flex-grow-1 bg-light p-4">
     <router-outlet></router-outlet>
   </div>

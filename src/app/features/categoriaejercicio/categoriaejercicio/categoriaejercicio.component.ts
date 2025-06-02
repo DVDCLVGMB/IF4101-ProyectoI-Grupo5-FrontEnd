@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CategoriaEjercicio } from '@app/domain/categoriaejercicio.model';
 import { CategoriaEjercicioService } from '@app/services/categoriaejercicio/categoriaejercicio.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-categoria-ejercicio',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, TranslateModule],
   templateUrl: './categoriaejercicio.component.html',
   styleUrls: ['./categoriaejercicio.component.css']
 })

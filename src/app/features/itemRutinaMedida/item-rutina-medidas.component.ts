@@ -6,12 +6,13 @@ import { ItemRutinaMedidasService } from '@app/services/itemRutinaMedida/item-ru
 import { MedidaCorporal } from '@app/domain/medidaCorporal.model';
 import { MedidasCorporalesService } from '@app/services/medidaCorporal/medidas-corporales.service';
 import { NgbModal, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @Component({
   selector: 'app-item-rutina-medidas',
   standalone: true,
-  imports: [CommonModule, FormsModule, NgbModalModule],
+  imports: [CommonModule, FormsModule, NgbModalModule, TranslateModule],
   templateUrl: './item-rutina-medidas.component.html',
   styleUrls: ['./item-rutina-medidas.component.css']
 })

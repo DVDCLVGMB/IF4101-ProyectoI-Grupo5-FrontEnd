@@ -4,11 +4,12 @@ import { FormsModule } from '@angular/forms';
 
 import { Empleado } from '../../../domain/empleado.model';
 import { EmpleadoService } from '@app/services/empleado/empleado.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-instructor-list',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, TranslateModule],
   templateUrl: './instructor-list.component.html',
   styleUrls: ['./instructor-list.component.css']
 })

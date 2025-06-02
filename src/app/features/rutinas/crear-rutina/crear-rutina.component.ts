@@ -18,6 +18,7 @@ import { ClienteService } from '@app/services/cliente/cliente.service';
 import { RutinaCompletaDTO } from '@app/domain/dto/RutinaCompletaDTO';
 import { ItemRutinaMedidaDTO } from '@app/domain/dto/RutinaCompletaDTO';
 import { ItemRutinaEjercicioDTO } from '@app/domain/dto/RutinaCompletaDTO';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-crear-rutina',
@@ -33,8 +34,9 @@ import { ItemRutinaEjercicioDTO } from '@app/domain/dto/RutinaCompletaDTO';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-        ItemRutinaMedidasComponent ,
-            ItemRutinaEjercicioComponent
+    ItemRutinaMedidasComponent ,
+    ItemRutinaEjercicioComponent,
+    TranslateModule
 
   ]
 })

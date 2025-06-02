@@ -8,6 +8,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { RutinaService } from '@app/services/rutina/rutina.service';
 import { Router } from '@angular/router';
 import { Rutina } from '@app/domain/rutina.model';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-entrenador-panel',
@@ -18,7 +19,8 @@ import { Rutina } from '@app/domain/rutina.model';
     MatIconModule,
     MatTableModule,
     MatButtonModule,
-    MatTooltipModule
+    MatTooltipModule,
+    TranslateModule
   ],
   templateUrl: './entrenador-panel.component.html',
   styleUrls: ['./entrenador-panel.component.scss']

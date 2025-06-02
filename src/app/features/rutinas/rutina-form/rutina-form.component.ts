@@ -6,11 +6,12 @@ import { RouterModule } from '@angular/router';
 
 import { Rutina } from '@app/domain/rutina.model';
 import { RutinaService } from '@app/services/rutina/rutina.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-rutina-form',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RouterModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule, TranslateModule],
   templateUrl: './rutina-form.component.html',
   styleUrls: ['./rutina-form.component.css']
 })

@@ -5,11 +5,12 @@ import { ClienteService } from '@app/services/cliente/cliente.service';  '../../
 import { ClienteInsertReactiveComponent } from '../cliente-insert-reactive/cliente-insert-reactive.component';
 import { FormsModule } from '@angular/forms';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-cliente-list',
   standalone: true,
-  imports: [CommonModule, FormsModule, ClienteInsertReactiveComponent],
+  imports: [CommonModule, FormsModule, ClienteInsertReactiveComponent, TranslateModule],
   templateUrl: './cliente-list.component.html',
   styleUrls: ['./cliente-list.component.css']
 })

@@ -6,11 +6,12 @@ import { EjercicioService } from '@app/services/ejercicio/ejercicio.service';
 import { ItemRutinaEjercicio } from '@app/domain/item-rutina-ejercicio.model';
 import { Ejercicio } from '@app/domain/ejercicio.model';
 import Swal from 'sweetalert2';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-item-rutina-ejercicio',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, TranslateModule],
   templateUrl: './item-rutina-ejercicios.component.html',
   styleUrls: ['./item-rutina-ejercicios.component.css']
 })

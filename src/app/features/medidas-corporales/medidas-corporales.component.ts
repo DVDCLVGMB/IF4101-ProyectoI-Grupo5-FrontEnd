@@ -5,11 +5,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MedidaInsertReactiveComponent } from './medidas-insert-reactive/medida-insert-reactive.component';
 import Swal from 'sweetalert2';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-medidas-corporales',
   standalone: true,
-  imports: [CommonModule, FormsModule, MedidaInsertReactiveComponent],
+  imports: [CommonModule, FormsModule, MedidaInsertReactiveComponent, TranslateModule],
   templateUrl: './medidas-corporales.component.html',
   styleUrls: ['./medidas-corporales.component.css']
 })

@@ -7,13 +7,15 @@ import { ActivatedRoute } from '@angular/router';
 
 import { RutinaService } from '@app/services/rutina/rutina.service';
 import { Rutina } from '@app/domain/rutina.model';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-rutinas-por-cliente',
   standalone: true,
   imports: [
     CommonModule,  // para *ngIf, *ngFor, pipe date, etc.
-    FormsModule    // para [(ngModel)]
+    FormsModule,    // para [(ngModel)]
+    TranslateModule
   ],
   templateUrl: './rutinas-por-cliente.component.html',
   styleUrls: ['./rutinas-por-cliente.component.css']

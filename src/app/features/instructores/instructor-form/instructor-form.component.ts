@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { InstructorService } from '../../../services/instructor/instructor.service';
 import { Instructor } from '../../../domain/instructor.model';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-instructor-form',
@@ -12,7 +13,8 @@ import { Instructor } from '../../../domain/instructor.model';
   styleUrls: ['./instructor-form.component.css'],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    TranslateModule
   ]
 })
 export class InstructorFormComponent {

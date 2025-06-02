@@ -3,12 +3,14 @@
     "",
     "\\src",
     "\\src\\app",
+    "\\src\\app\\components",
     "\\src\\app\\components\\layout",
-    "\\src\\app\\features\\instructores\\clientes-tab",
+    "\\src\\app\\features",
+    "\\src\\app\\features\\rutinas",
+    "\\src\\app\\features\\rutinas\\rutina-form",
     "\\src\\app\\services",
-    "\\src\\app\\services\\rutina",
-    "\\src\\environments"
+    "\\src\\app\\services\\rutina"
   ],
-  "SelectedNode": "\\src\\app\\services\\rutina\\rutina.service.ts",
+  "SelectedNode": "\\src\\app\\app.component.ts",
   "PreviewInSolutionExplorer": false
 }

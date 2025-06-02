@@ -6,11 +6,12 @@ import Swal from 'sweetalert2';
 
 import { Empleado } from '../../../domain/empleado.model';
 import { EmpleadoService } from '../../../services/empleado/empleado.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-empleado-form',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule],
+  imports: [CommonModule, FormsModule, RouterModule, TranslateModule],
   templateUrl: './empleado-form.component.html',
   styleUrls: ['./empleado-form.component.css']
 })

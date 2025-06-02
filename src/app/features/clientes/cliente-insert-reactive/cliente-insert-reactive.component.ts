@@ -4,11 +4,12 @@ import { ClienteService } from '@app/services/cliente/cliente.service';
 import { Component, EventEmitter, Output, Input, OnInit } from '@angular/core';
 import { Cliente } from '@app/domain/cliente.model';
 import Swal from 'sweetalert2';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-cliente-insert-reactive',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, TranslateModule],
   templateUrl: './cliente-insert-reactive.component.html',
   styleUrls: ['./cliente-insert-reactive.component.css']
 })

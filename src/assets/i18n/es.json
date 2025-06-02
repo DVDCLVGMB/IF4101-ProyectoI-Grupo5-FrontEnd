@@ -1,0 +1,107 @@
+{
+  
+ "sidebar": {
+    "title": "Bulk Gym",
+    "panelPrincipal": "Panel Principal",
+    "clientes": "Clientes",
+    "medidasCorporales": "Medidas Corporales",
+    "empleados": "Empleados",
+    "instructores": "Instructores",
+    "ejercicios": "Ejercicios",
+    "rutinasDelCliente": "Rutinas del Cliente",
+    "categoriasEjercicio": "Categorías de Ejercicio",
+    "cerrarSesion": "Cerrar Sesión"
+    },
+  "dashboard": {
+    "panelDeControl": "Panel de Control",
+    "bienvenida": "Bienvenido, consulta y administra tu información de forma rápida y sencilla",
+    "clientesTotales": "Clientes Totales",
+    "clientesActivos": "Clientes Activos",
+    "clientesInactivos": "Clientes Inactivos",
+    "ejerciciosRegistrados": "Ejercicios Registrados",
+    "rutinasActivas": "Rutinas Activas",
+    "accesoRapido": "Acceso Rápido",
+    "gestionDeClientes": "Gestión de Clientes",
+    "gestionDeEjercicios": "Gestión de Ejercicios",
+    "gestionDeEmpleados": "Gestión de Empleados",
+    "gestionDeMedidasCorporales": "Gestión de Medidas Corporales"
+  },
+  "clients": {
+    "gestionDeClientes": "Gestión de Clientes",
+    "buscarPorNombreOTelefono": "Buscar por nombre o teléfono",
+    "nuevoCliente": "Nuevo Cliente",
+    "cliente": "Cliente",
+    "cedula": "Cédula",
+    "fechaNacimiento": "Fecha Nacimiento",
+    "telefono": "Teléfono",
+    "correoElectronico": "Correo Electrónico",
+    "direccion": "Dirección",
+    "contactoEmergencia": "Contacto Emergencia",
+    "activo": "Activo",
+    "si": "Sí",
+    "no": "No",
+    "acciones": "Acciones",
+    "editar": "Editar",
+    "borrar": "Borrar"
+  },
+  "measurements": {
+    "gestionDeMedidasCorporales": "Gestión de Medidas Corporales",
+    "nuevaMedida": "Nueva Medida",
+    "buscarMedidas": "Buscar medidas...",
+    "listadoDeMedidasRegistradas": "Listado de Medidas Registradas",
+    "imagen": "Imagen",
+    "nombre": "Nombre",
+    "unidad": "Unidad",
+    "acciones": "Acciones",
+    "editar": "Editar",
+    "borrar": "Borrar"
+  },
+  "employees": {
+    "gestionDeEmpleados": "Gestión de Empleados",
+    "buscarPorNombreRolOTelefono": "Buscar por nombre, rol o teléfono",
+    "nuevoEmpleado": "Nuevo Empleado",
+    "empleado": "Empleado",
+    "cedula": "Cédula",
+    "fechaNacimiento": "Fecha de Nacimiento",
+    "telefono": "Teléfono",
+    "correoElectronico": "Correo Electrónico",
+    "direccion": "Dirección",
+    "contactoEmergencia": "Contacto Emergencia",
+    "rol": "Rol",
+    "acciones": "Acciones",
+    "editar": "Editar",
+    "borrar": "Borrar"
+  },
+  "instructors": {
+    "buscarInstructor": "Buscar instructor...",
+    "instructores": "Instructores",
+    "instructor": "Instructor",
+    "telefono": "Teléfono",
+    "email": "Email",
+    "fechaNacimiento": "Fecha Nac."
+  },
+  "exercises": {
+    "listadoDeEjerciciosRegistrados": "Listado de Ejercicios Registrados",
+    "nuevoEjercicio": "Nuevo Ejercicio",
+    "imagen": "Imagen",
+    "nombreDelEjercicio": "Nombre del Ejercicio",
+    "categoria": "Categoría",
+    "acciones": "Acciones",
+    "editar": "Editar",
+    "borrar": "Borrar"
+  },
+  "clientRoutines": {
+    "cedula": "Cédula",
+    "idCliente": "ID Cliente",
+    "tel": "Tel"
+  },
+  "categories": {
+    "gestionDeCategoriasDeEjercicio": "Gestión de Categorías de Ejercicio",
+    "buscarCategoria": "Buscar categoría...",
+    "nuevaCategoria": "Nueva Categoría",
+    "nombreDeCategoria": "Nombre de Categoría",
+    "acciones": "Acciones",
+    "editar": "Editar",
+    "borrar": "Borrar"
+  }
+}

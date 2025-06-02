@@ -5,12 +5,13 @@ import { SesionService } from '../../services/sesion/sesion.service';
 import { LoginRequestDTO } from '../../domain/dto/login-request.dto';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule]
+  imports: [CommonModule, ReactiveFormsModule, TranslateModule]
 })
 export class LoginComponent {
 

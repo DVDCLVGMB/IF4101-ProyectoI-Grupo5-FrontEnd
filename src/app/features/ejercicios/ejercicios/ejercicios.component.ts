@@ -5,11 +5,12 @@ import { EjercicioService } from '@app/services/ejercicio/ejercicio.service';
 import { CategoriaEjercicioService } from '@app/services/categoriaejercicio/categoriaejercicio.service';
 import { Ejercicio } from '@app/domain/ejercicio.model';
 import Swal from 'sweetalert2';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-ejercicio',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, TranslateModule],
   templateUrl: './ejercicios.component.html',
   styleUrls: ['./ejercicios.component.css']
 })

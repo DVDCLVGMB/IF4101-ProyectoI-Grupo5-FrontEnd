@@ -4,11 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { Empleado } from '../../../domain/empleado.model';
 import { EmpleadoService } from '../../../services/empleado/empleado.service';
 import { EmpleadoFormComponent } from '../empleado-form/empleado-form.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-empleado-list',
   standalone: true,
-  imports: [CommonModule, FormsModule, EmpleadoFormComponent],
+  imports: [CommonModule, FormsModule, EmpleadoFormComponent, TranslateModule],
   templateUrl: './empleado-list.component.html',
   styleUrls: ['./empleado-list.component.css']
 })
