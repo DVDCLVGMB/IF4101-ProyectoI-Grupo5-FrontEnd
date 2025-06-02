@@ -12,95 +12,227 @@
     "cerrarSesion": "Sair"
   },
   "dashboard": {
-    "panelDeControl": "Painel de Controle",
-    "bienvenida": "Bem-vindo, consulte e gerencie suas informações de forma rápida e fácil",
-    "clientesTotales": "Clientes Totais",
-    "clientesActivos": "Clientes Ativos",
-    "clientesInactivos": "Clientes Inativos",
-    "ejerciciosRegistrados": "Exercícios Cadastrados",
-    "rutinasActivas": "Rotinas Ativas",
-    "accesoRapido": "Acesso Rápido",
-    "gestionDeClientes": "Gerenciamento de Clientes",
-    "gestionDeEjercicios": "Gerenciamento de Exercícios",
-    "gestionDeEmpleados": "Gerenciamento de Empregados",
-    "gestionDeMedidasCorporales": "Gerenciamento de Medidas Corporais"
+    "title": "Painel de Controle",
+    "subtitle": "Bem-vindo, consulte e gerencie suas informações de forma rápida e fácil",
+    "totalClients": "Clientes Totais",
+    "newThisMonth": "{{count}} novos este mês",
+    "activeClients": "Clientes Ativos",
+    "inactiveClients": "Clientes Inativos",
+    "registeredExercises": "Exercícios Registrados",
+    "distributedInCategories": "Distribuídos em {{count}} categorias",
+    "activeRoutines": "Rotinas Ativas",
+    "createdThisWeek": "{{count}} criadas esta semana",
+    "quickAccess": "Acesso Rápido",
+    "manageClients": "Gestão de Clientes",
+    "manageExercises": "Gestão de Exercícios",
+    "manageEmployees": "Gestão de Funcionários",
+    "manageBodyMeasurements": "Gestão de Medidas Corporais"
   },
   "clients": {
-    "gestionDeClientes": "Gerenciamento de Clientes",
-    "buscarPorNombreOTelefono": "Buscar por Nome ou Telefone",
-    "nuevoCliente": "Novo Cliente",
-    "cliente": "Cliente",
-    "cedula": "Documento de Identidade",
-    "fechaNacimiento": "Data de Nascimento",
-    "telefono": "Telefone",
-    "correoElectronico": "Email",
-    "direccion": "Endereço",
-    "contactoEmergencia": "Contato de Emergência",
-    "activo": "Ativo",
-    "si": "Sim",
-    "no": "Não",
-    "acciones": "Ações",
-    "editar": "Editar",
-    "borrar": "Excluir"
+    "title": "Gestão de Clientes",
+    "new": "Novo Cliente",
+    "searchPlaceholder": "Buscar por nome ou telefone",
+    "header": {
+      "client": "Cliente",
+      "idCard": "Cédula",
+      "birthDate": "Data de Nascimento",
+      "phone": "Telefone",
+      "email": "Email",
+      "address": "Endereço",
+      "emergencyContact": "Contato de Emergência",
+      "active": "Ativo",
+      "actions": "Ações"
+    },
+    "activeYes": "Sim",
+    "activeNo": "Não",
+    "edit": "Editar",
+    "delete": "Excluir",
+    "editClient": "Editar Cliente",
+    "newClient": "Novo Cliente"
   },
-  "measurements": {
-    "gestionDeMedidasCorporales": "Gerenciamento de Medidas Corporais",
-    "nuevaMedida": "Nova Medida",
-    "buscarMedidas": "Buscar medidas...",
-    "listadoDeMedidasRegistradas": "Lista de Medidas Cadastradas",
-    "imagen": "Imagem",
-    "nombre": "Nome",
-    "unidad": "Unidade",
-    "acciones": "Ações",
-    "editar": "Editar",
-    "borrar": "Excluir"
+  "measures": {
+    "title": "Gestão de Medidas Corporais",
+    "new": "Nova Medida",
+    "searchPlaceholder": "Buscar medidas...",
+    "listTitle": "Lista de Medidas Registradas",
+    "header": {
+      "image": "Imagem",
+      "name": "Nome",
+      "unit": "Unidade",
+      "actions": "Ações"
+    },
+    "edit": "Editar",
+    "delete": "Excluir",
+    "editTitle": "Editar Medida",
+    "newTitle": "Nova Medida"
   },
   "employees": {
-    "gestionDeEmpleados": "Gerenciamento de Empregados",
-    "buscarPorNombreRolOTelefono": "Buscar por Nome, Função ou Telefone",
-    "nuevoEmpleado": "Novo Empregado",
-    "empleado": "Empregado",
-    "cedula": "Documento de Identidade",
-    "fechaNacimiento": "Data de Nascimento",
-    "telefono": "Telefone",
-    "correoElectronico": "Email",
-    "direccion": "Endereço",
-    "contactoEmergencia": "Contato de Emergência",
-    "rol": "Função",
-    "acciones": "Ações",
-    "editar": "Editar",
-    "borrar": "Excluir"
+    "title": "Gestão de Funcionários",
+    "newButton": "Novo Funcionário",
+    "searchPlaceholder": "Buscar por nome, função ou telefone",
+    "column": {
+      "employee": "Funcionário",
+      "id": "ID",
+      "birthDate": "Data de Nascimento",
+      "phone": "Telefone",
+      "email": "E-mail",
+      "address": "Endereço",
+      "emergencyContact": "Contato de Emergência",
+      "role": "Função",
+      "actions": "Ações"
+    },
+    "editTitle": "Editar Funcionário",
+    "newTitle": "Novo Funcionário"
   },
   "instructors": {
-    "buscarInstructor": "Buscar instrutor...",
-    "instructores": "Instrutores",
-    "instructor": "Instrutor",
-    "telefono": "Telefone",
-    "email": "Email",
-    "fechaNacimiento": "Data de Nascimento"
+    "title": "Instrutores",
+    "searchPlaceholder": "Buscar instrutor...",
+    "header": {
+      "name": "Instrutor",
+      "phone": "Telefone",
+      "email": "Email",
+      "birthDate": "Data Nasc."
+    },
+    "noMatches": "Nenhum instrutor corresponde."
   },
   "exercises": {
-    "listadoDeEjerciciosRegistrados": "Lista de Exercícios Cadastrados",
-    "nuevoEjercicio": "Novo Exercício",
-    "imagen": "Imagem",
-    "nombreDelEjercicio": "Nome do Exercício",
-    "categoria": "Categoria",
-    "acciones": "Ações",
-    "editar": "Editar",
-    "borrar": "Excluir"
+    "newExercise": "➕ Novo Exercício",
+    "listTitle": "Lista de Exercícios Registrados",
+    "header": {
+      "image": "Imagem",
+      "name": "Nome do Exercício",
+      "category": "Categoria",
+      "actions": "Ações"
+    },
+    "noCategory": "Sem Categoria",
+    "edit": "✏️ Editar",
+    "delete": "🗑️ Excluir",
+    "modal": {
+      "newTitle": "Registrar Novo Exercício",
+      "editTitle": "Editar Exercício",
+      "imagePreviewAlt": "Visualização da imagem",
+      "uploadImage": "📷 Carregar Imagem",
+      "nameLabel": "Nome do Exercício",
+      "namePlaceholder": "Ex: Agachamento com barra",
+      "categoryLabel": "Categoria",
+      "selectCategory": "Selecione uma categoria",
+      "cancel": "Cancelar",
+      "save": "Salvar",
+      "update": "Atualizar"
+    }
   },
-  "clientRoutines": {
-    "cedula": "Documento de Identidade",
-    "idCliente": "ID do Cliente",
-    "tel": "Telefone"
+  "clientsRoutines": {
+    "idCard": "Cédula",
+    "clientId": "ID do Cliente",
+    "phone": "Telefone"
   },
   "categories": {
-    "gestionDeCategoriasDeEjercicio": "Gerenciamento de Categorias de Exercício",
-    "buscarCategoria": "Buscar categoria...",
-    "nuevaCategoria": "Nova Categoria",
-    "nombreDeCategoria": "Nome da Categoria",
-    "acciones": "Ações",
-    "editar": "Editar",
-    "borrar": "Excluir"
+    "title": "Gestão de Categorias de Exercício",
+    "newCategory": "+ Nova Categoria",
+    "searchPlaceholder": "Buscar categoria...",
+    "name": "Nome da Categoria",
+    "editTitle": "Editar Categoria",
+    "newTitle": "Nova Categoria",
+    "namePlaceholder": "Nome da Categoria"
+  },
+  "clientForm": {
+    "profileAlt": "Foto de perfil",
+    "idPersonaLabel": "CPF / ID",
+    "idPersonaPlaceholder": "Digite o número de ID",
+    "firstNameLabel": "Nome",
+    "firstNamePlaceholder": "Digite o nome",
+    "lastNameLabel": "Sobrenome",
+    "lastNamePlaceholder": "Digite o sobrenome",
+    "birthDateLabel": "Data de Nascimento",
+    "sexLabel": "Sexo",
+    "male": "Masculino",
+    "female": "Feminino",
+    "phoneLabel": "Telefone",
+    "phonePlaceholder": "Digite o telefone",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "Digite o e-mail",
+    "addressLabel": "Endereço",
+    "addressPlaceholder": "Digite o endereço",
+    "emergencyNameLabel": "Nome Contato de Emergência",
+    "emergencyNamePlaceholder": "Digite nome do contato de emergência",
+    "emergencyPhoneLabel": "Telefone Contato de Emergência",
+    "emergencyPhonePlaceholder": "Digite telefone de contato de emergência",
+    "activeLabel": "Ativo",
+    "updateButton": "Atualizar Cliente",
+    "registerButton": "Registrar Cliente"
+  },
+  "employeesForm": {
+    "label": {
+      "name": "Nome",
+      "lastname": "Sobrenome",
+      "id": "ID",
+      "role": "Função",
+      "email": "E-mail",
+      "phone": "Telefone",
+      "birthDate": "Data de Nascimento",
+      "gender": "Gênero",
+      "address": "Endereço",
+      "emergencyContact": "Contato de Emergência",
+      "emergencyPhone": "Telefone de Emergência"
+    },
+    "placeholder": {
+      "selectRole": "Selecione uma função"
+    },
+    "role": {
+      "instructor": "Instrutor",
+      "janitor": "Zelador",
+      "technician": "Técnico",
+      "assistant": "Assistente"
+    },
+    "gender": {
+      "male": "Masculino",
+      "female": "Feminino",
+      "other": "Outro"
+    },
+    "button": {
+      "update": "Atualizar",
+      "register": "Registrar"
+    }
+  },
+  "routines": {
+    "searchLabel": "Buscar Cliente por ID",
+    "searchPlaceholder": "Insira o ID do cliente",
+    "searchButton": "Buscar",
+    "title": "Rotinas do Cliente ",
+    "header": {
+      "creationDate": "Data de Criação",
+      "objective": "Objetivo",
+      "report": "Relatório"
+    },
+    "noRoutines": "Nenhuma rotina encontrada para este cliente.",
+    "downloadPdfTitle": "Baixar PDF"
+  },
+  "trainerPanel": {
+    "title": "Painel do Treinador",
+    "subtitle": "Bem-vindo ao sistema de gerenciamento de rotinas",
+    "activeRoutines": "Rotinas Ativas",
+    "activeRoutinesDetail": "3 novas esta semana",
+    "totalClients": "Clientes Totais",
+    "totalClientsDetail": "2 novos este mês",
+    "routinesToRenew": "Rotinas a Renovar",
+    "routinesToRenewDetail": "Próximos 7 dias",
+    "recentRoutines": "Rotinas Recentes",
+    "viewAll": "Ver todas",
+    "column": {
+      "client": "Cliente",
+      "date": "Data",
+      "objective": "Objetivo"
+    },
+    "noObjective": "Sem objetivo",
+    "view": "Ver"
+  },
+  "common": {
+    "actions": "Ações",
+    "edit": "Editar",
+    "delete": "Excluir",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "loading": "Carregando...",
+    "select": "Selecione..."
   }
 }

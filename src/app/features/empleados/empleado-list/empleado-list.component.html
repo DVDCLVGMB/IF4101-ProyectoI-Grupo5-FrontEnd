@@ -1,26 +1,27 @@
 <div class="d-flex justify-content-between align-items-center mb-3">
-  <h2>Gestión de Empleados</h2>
+  <h2>{{ 'employees.title' | translate }}</h2>
   <button class="btn btn-primary" (click)="abrirModal()">
-    <i class="bi bi-plus-lg"></i> Nuevo Empleado
+    <i class="bi bi-plus-lg"></i>
+    {{ 'employees.newButton' | translate }}
   </button>
 </div>
 
 <input class="form-control mb-4"
-       placeholder="Buscar por nombre, rol o teléfono"
+       placeholder="{{ 'employees.searchPlaceholder' | translate }}"
        [(ngModel)]="filtro" />
 
 <table class="table table-hover table-bordered align-middle">
   <thead class="table-light">
     <tr class="text-center">
-      <th>Empleado</th>               
-      <th>Cédula</th>
-      <th>Fecha de Nacimiento</th>
-      <th>Teléfono</th>
-      <th>Correo Electrónico</th>
-      <th>Dirección</th>
-      <th>Contacto Emergencia</th>
-      <th>Rol</th>                    
-      <th>Acciones</th>
+      <th>{{ 'employees.column.employee' | translate }}</th>
+      <th>{{ 'employees.column.id' | translate }}</th>
+      <th>{{ 'employees.column.birthDate' | translate }}</th>
+      <th>{{ 'employees.column.phone' | translate }}</th>
+      <th>{{ 'employees.column.email' | translate }}</th>
+      <th>{{ 'employees.column.address' | translate }}</th>
+      <th>{{ 'employees.column.emergencyContact' | translate }}</th>
+      <th>{{ 'employees.column.role' | translate }}</th>
+      <th>{{ 'employees.column.actions' | translate }}</th>
     </tr>
   </thead>
   <tbody>
@@ -29,44 +30,32 @@
         <img [src]="empleado.imagenRuta || 'https://cdn-icons-png.flaticon.com/512/847/847969.png'"
              (error)="empleado.imagenRuta = 'https://cdn-icons-png.flaticon.com/512/847/847969.png'"
              class="rounded-circle"
-             alt="Foto Empleado"
-             style="width: 50px; height: 50px; object-fit: cover; border: 1px solid #ccc;">
+             alt="{{ 'employees.column.employee' | translate }}"
+             style="width: 50px; height: 50px; object-fit: cover; border: 1px solid #ccc;" />
         <span class="fw-bold">{{ empleado.nombre }} {{ empleado.apellidos }}</span>
       </td>
 
-      <!-- Cédula -->
       <td class="text-center">{{ empleado.idPersona }}</td>
-
-      <!-- Fecha de Nacimiento -->
       <td class="text-center">{{ empleado.fechaNacimiento | date:'dd/MM/yyyy' }}</td>
-
-      <!-- Teléfono -->
       <td class="text-center">{{ empleado.telefono }}</td>
-
-      <!-- Correo Electrónico -->
       <td class="text-center">{{ empleado.correoElectronico }}</td>
-
-      <!-- Dirección -->
       <td class="text-center">{{ empleado.direccion || '-' }}</td>
-
-      <!-- Contacto Emergencia -->
       <td class="text-center">
         {{ empleado.nombreContactoEmergencia || '-' }}<br />
         <small>{{ empleado.telContactoEmergencia || '-' }}</small>
       </td>
-
-      <!-- Rol del Empleado -->
       <td class="text-center">{{ empleado.rolEmpleado }}</td>
 
-      <!-- Acciones -->
       <td class="text-center">
         <button class="btn btn-sm btn-outline-primary me-2 d-flex align-items-center justify-content-center gap-1"
                 (click)="abrirModal(empleado)">
-          <i class="bi bi-pencil-square"></i> Editar
+          <i class="bi bi-pencil-square"></i>
+          {{ 'common.edit' | translate }}
         </button>
         <button class="btn btn-sm btn-outline-danger d-flex align-items-center justify-content-center gap-1"
                 (click)="empleado.idEmpleado && eliminarEmpleado(empleado.idEmpleado)">
-          <i class="bi bi-trash3"></i> Eliminar
+          <i class="bi bi-trash3"></i>
+          {{ 'common.delete' | translate }}
         </button>
       </td>
     </tr>
@@ -80,7 +69,11 @@
     <div class="modal-content p-4 rounded-4 shadow-sm">
       <div class="modal-header border-0">
         <h5 class="modal-title">
-          {{ empleadoSeleccionado ? 'Editar Empleado' : 'Nuevo Empleado' }}
+          {{
+ empleadoSeleccionado
+             ? ('employees.editTitle' | translate)
+             : ('employees.newTitle' | translate)
+          }}
         </h5>
         <button type="button" class="btn-close" (click)="cerrarModal()"></button>
       </div>

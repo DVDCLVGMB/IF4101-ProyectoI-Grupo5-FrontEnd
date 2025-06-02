@@ -2,8 +2,8 @@
 
   <!-- 🔵 Título del panel -->
   <div class="text-center mb-5">
-    <h1 class="fw-bold">Panel de Control - GymPro</h1>
-    <p class="text-muted">Bienvenido, consulta y administra tu información de forma rápida y sencilla</p>
+    <h1 class="fw-bold">{{ 'dashboard.title' | translate }}</h1>
+    <p class="text-muted">{{ 'dashboard.subtitle' | translate }}</p>
   </div>
 
   <!-- 🔵 Estadísticas principales -->
@@ -14,9 +14,11 @@
       <div class="card border-0 shadow-sm h-100">
         <div class="card-body text-center">
           <i class="bi bi-people-fill text-primary fs-1 mb-3"></i>
-          <h5 class="card-title fw-bold">Clientes Totales</h5>
+          <h5 class="card-title fw-bold">{{ 'dashboard.totalClients' | translate }}</h5>
           <p class="display-6">{{ cantidadClientes }}</p>
-          <small class="text-muted">{{ nuevosClientesMes }} nuevos este mes</small>
+          <small class="text-muted">
+            {{ 'dashboard.newThisMonth' | translate:{count: nuevosClientesMes} }}
+          </small>
         </div>
       </div>
     </div>
@@ -26,7 +28,7 @@
       <div class="card border-0 shadow-sm h-100">
         <div class="card-body text-center">
           <i class="bi bi-person-check-fill text-success fs-1 mb-3"></i>
-          <h5 class="card-title fw-bold">Clientes Activos</h5>
+          <h5 class="card-title fw-bold">{{ 'dashboard.activeClients' | translate }}</h5>
           <p class="display-6">{{ cantidadClientesActivos }}</p>
         </div>
       </div>
@@ -37,7 +39,7 @@
       <div class="card border-0 shadow-sm h-100">
         <div class="card-body text-center">
           <i class="bi bi-person-x-fill text-danger fs-1 mb-3"></i>
-          <h5 class="card-title fw-bold">Clientes Inactivos</h5>
+          <h5 class="card-title fw-bold">{{ 'dashboard.inactiveClients' | translate }}</h5>
           <p class="display-6">{{ cantidadClientesInactivos }}</p>
         </div>
       </div>
@@ -48,9 +50,11 @@
       <div class="card border-0 shadow-sm h-100">
         <div class="card-body text-center">
           <i class="bi bi-barbell text-warning fs-1 mb-3"></i>
-          <h5 class="card-title fw-bold">Ejercicios Registrados</h5>
+          <h5 class="card-title fw-bold">{{ 'dashboard.registeredExercises' | translate }}</h5>
           <p class="display-6">{{ cantidadEjercicios }}</p>
-          <small class="text-muted">Distribuidos en {{ cantidadCategorias }} categorías</small>
+          <small class="text-muted">
+            {{ 'dashboard.distributedInCategories' | translate:{count: cantidadCategorias} }}
+          </small>
         </div>
       </div>
     </div>
@@ -60,9 +64,11 @@
       <div class="card border-0 shadow-sm h-100">
         <div class="card-body text-center">
           <i class="bi bi-graph-up-arrow text-danger fs-1 mb-3"></i>
-          <h5 class="card-title fw-bold">Rutinas Activas</h5>
+          <h5 class="card-title fw-bold">{{ 'dashboard.activeRoutines' | translate }}</h5>
           <p class="display-6">{{ cantidadRutinasActivas }}</p>
-          <small class="text-muted">{{ rutinasSemana }} creadas esta semana</small>
+          <small class="text-muted">
+            {{ 'dashboard.createdThisWeek' | translate:{count: rutinasSemana} }}
+          </small>
         </div>
       </div>
     </div>
@@ -70,31 +76,31 @@
   </div>
 
   <!-- 🔵 Acceso Rápido -->
-<div class="row justify-content-center">
-  <div class="col-md-8">
-    <div class="card border-0 shadow-sm">
-      <div class="card-body text-center">
-        <h5 class="card-title fw-bold mb-4">
-          <i class="bi bi-lightning-fill text-warning me-2"></i>Acceso Rápido
-        </h5>
-        <div class="d-grid gap-3">
-          <button class="btn btn-outline-primary py-2" routerLink="/clientes">
-            <i class="bi bi-people-fill me-2"></i> Gestión de Clientes
-          </button>
-          <button class="btn btn-outline-success py-2" routerLink="/ejercicios">
-            <i class="bi bi-barbell me-2"></i> Gestión de Ejercicios
-          </button>
-          <button class="btn btn-outline-info py-2" routerLink="/empleados">
-            <i class="bi bi-person-workspace me-2"></i> Gestión de Empleados
-          </button>
-          <button class="btn btn-outline-warning py-2" routerLink="/medidas-corporales">
-            <i class="bi bi-rulers me-2"></i> Gestión de Medidas Corporales
-          </button>
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body text-center">
+          <h5 class="card-title fw-bold mb-4">
+            <i class="bi bi-lightning-fill text-warning me-2"></i>
+            {{ 'dashboard.quickAccess' | translate }}
+          </h5>
+          <div class="d-grid gap-3">
+            <button class="btn btn-outline-primary py-2" routerLink="/clientes">
+              <i class="bi bi-people-fill me-2"></i> {{ 'dashboard.manageClients' | translate }}
+            </button>
+            <button class="btn btn-outline-success py-2" routerLink="/ejercicios">
+              <i class="bi bi-barbell me-2"></i> {{ 'dashboard.manageExercises' | translate }}
+            </button>
+            <button class="btn btn-outline-info py-2" routerLink="/empleados">
+              <i class="bi bi-person-workspace me-2"></i> {{ 'dashboard.manageEmployees' | translate }}
+            </button>
+            <button class="btn btn-outline-warning py-2" routerLink="/medidas-corporales">
+              <i class="bi bi-rulers me-2"></i> {{ 'dashboard.manageBodyMeasurements' | translate }}
+            </button>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-
 
 </div>

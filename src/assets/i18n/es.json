@@ -1,6 +1,6 @@
 {
-  
- "sidebar": {
+
+  "sidebar": {
     "title": "Bulk Gym",
     "panelPrincipal": "Panel Principal",
     "clientes": "Clientes",
@@ -11,97 +11,229 @@
     "rutinasDelCliente": "Rutinas del Cliente",
     "categoriasEjercicio": "Categorías de Ejercicio",
     "cerrarSesion": "Cerrar Sesión"
-    },
+  },
   "dashboard": {
-    "panelDeControl": "Panel de Control",
-    "bienvenida": "Bienvenido, consulta y administra tu información de forma rápida y sencilla",
-    "clientesTotales": "Clientes Totales",
-    "clientesActivos": "Clientes Activos",
-    "clientesInactivos": "Clientes Inactivos",
-    "ejerciciosRegistrados": "Ejercicios Registrados",
-    "rutinasActivas": "Rutinas Activas",
-    "accesoRapido": "Acceso Rápido",
-    "gestionDeClientes": "Gestión de Clientes",
-    "gestionDeEjercicios": "Gestión de Ejercicios",
-    "gestionDeEmpleados": "Gestión de Empleados",
-    "gestionDeMedidasCorporales": "Gestión de Medidas Corporales"
+    "title": "Panel de Control",
+    "subtitle": "Bienvenido, consulta y administra tu información de forma rápida y sencilla",
+    "totalClients": "Clientes Totales",
+    "newThisMonth": "{{count}} nuevos este mes",
+    "activeClients": "Clientes Activos",
+    "inactiveClients": "Clientes Inactivos",
+    "registeredExercises": "Ejercicios Registrados",
+    "distributedInCategories": "Distribuidos en {{count}} categorías",
+    "activeRoutines": "Rutinas Activas",
+    "createdThisWeek": "{{count}} creadas esta semana",
+    "quickAccess": "Acceso Rápido",
+    "manageClients": "Gestión de Clientes",
+    "manageExercises": "Gestión de Ejercicios",
+    "manageEmployees": "Gestión de Empleados",
+    "manageBodyMeasurements": "Gestión de Medidas Corporales"
   },
   "clients": {
-    "gestionDeClientes": "Gestión de Clientes",
-    "buscarPorNombreOTelefono": "Buscar por nombre o teléfono",
-    "nuevoCliente": "Nuevo Cliente",
-    "cliente": "Cliente",
-    "cedula": "Cédula",
-    "fechaNacimiento": "Fecha Nacimiento",
-    "telefono": "Teléfono",
-    "correoElectronico": "Correo Electrónico",
-    "direccion": "Dirección",
-    "contactoEmergencia": "Contacto Emergencia",
-    "activo": "Activo",
-    "si": "Sí",
-    "no": "No",
-    "acciones": "Acciones",
-    "editar": "Editar",
-    "borrar": "Borrar"
+    "title": "Gestión de Clientes",
+    "new": "Nuevo Cliente",
+    "searchPlaceholder": "Buscar por nombre o teléfono",
+    "header": {
+      "client": "Cliente",
+      "idCard": "Cédula",
+      "birthDate": "Fecha de Nacimiento",
+      "phone": "Teléfono",
+      "email": "Correo Electrónico",
+      "address": "Dirección",
+      "emergencyContact": "Contacto Emergencia",
+      "active": "Activo",
+      "actions": "Acciones"
+    },
+    "activeYes": "Sí",
+    "activeNo": "No",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "editClient": "Editar Cliente",
+    "newClient": "Nuevo Cliente"
   },
-  "measurements": {
-    "gestionDeMedidasCorporales": "Gestión de Medidas Corporales",
-    "nuevaMedida": "Nueva Medida",
-    "buscarMedidas": "Buscar medidas...",
-    "listadoDeMedidasRegistradas": "Listado de Medidas Registradas",
-    "imagen": "Imagen",
-    "nombre": "Nombre",
-    "unidad": "Unidad",
-    "acciones": "Acciones",
-    "editar": "Editar",
-    "borrar": "Borrar"
+  "measures": {
+    "title": "Gestión de Medidas Corporales",
+    "new": "Nueva Medida",
+    "searchPlaceholder": "Buscar medidas...",
+    "listTitle": "Listado de Medidas Registradas",
+    "header": {
+      "image": "Imagen",
+      "name": "Nombre",
+      "unit": "Unidad",
+      "actions": "Acciones"
+    },
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "editTitle": "Editar Medida",
+    "newTitle": "Nueva Medida"
   },
   "employees": {
-    "gestionDeEmpleados": "Gestión de Empleados",
-    "buscarPorNombreRolOTelefono": "Buscar por nombre, rol o teléfono",
-    "nuevoEmpleado": "Nuevo Empleado",
-    "empleado": "Empleado",
-    "cedula": "Cédula",
-    "fechaNacimiento": "Fecha de Nacimiento",
-    "telefono": "Teléfono",
-    "correoElectronico": "Correo Electrónico",
-    "direccion": "Dirección",
-    "contactoEmergencia": "Contacto Emergencia",
-    "rol": "Rol",
-    "acciones": "Acciones",
-    "editar": "Editar",
-    "borrar": "Borrar"
+    "title": "Gestión de Empleados",
+    "newButton": "Nuevo Empleado",
+    "searchPlaceholder": "Buscar por nombre, rol o teléfono",
+    "column": {
+      "employee": "Empleado",
+      "id": "Cédula",
+      "birthDate": "Fecha de Nacimiento",
+      "phone": "Teléfono",
+      "email": "Correo Electrónico",
+      "address": "Dirección",
+      "emergencyContact": "Contacto Emergencia",
+      "role": "Rol",
+      "actions": "Acciones"
+    },
+    "editTitle": "Editar Empleado",
+    "newTitle": "Nuevo Empleado"
   },
   "instructors": {
-    "buscarInstructor": "Buscar instructor...",
-    "instructores": "Instructores",
-    "instructor": "Instructor",
-    "telefono": "Teléfono",
-    "email": "Email",
-    "fechaNacimiento": "Fecha Nac."
+    "title": "Instructores",
+    "searchPlaceholder": "Buscar instructor...",
+    "header": {
+      "name": "Instructor",
+      "phone": "Teléfono",
+      "email": "Email",
+      "birthDate": "Fecha Nac."
+    },
+    "noMatches": "No hay instructores que coincidan."
   },
   "exercises": {
-    "listadoDeEjerciciosRegistrados": "Listado de Ejercicios Registrados",
-    "nuevoEjercicio": "Nuevo Ejercicio",
-    "imagen": "Imagen",
-    "nombreDelEjercicio": "Nombre del Ejercicio",
-    "categoria": "Categoría",
-    "acciones": "Acciones",
-    "editar": "Editar",
-    "borrar": "Borrar"
+    "newExercise": "➕ Nuevo Ejercicio",
+    "listTitle": "Listado de Ejercicios Registrados",
+    "header": {
+      "image": "Imagen",
+      "name": "Nombre del Ejercicio",
+      "category": "Categoría",
+      "actions": "Acciones"
+    },
+    "noCategory": "Sin Categoría",
+    "edit": "✏️ Editar",
+    "delete": "🗑️ Eliminar",
+    "modal": {
+      "newTitle": "Registrar Nuevo Ejercicio",
+      "editTitle": "Editar Ejercicio",
+      "imagePreviewAlt": "Vista previa de imagen",
+      "uploadImage": "📷 Cargar Imagen",
+      "nameLabel": "Nombre del Ejercicio",
+      "namePlaceholder": "Ej: Sentadilla con barra",
+      "categoryLabel": "Categoría",
+      "selectCategory": "Seleccione una categoría",
+      "cancel": "Cancelar",
+      "save": "Guardar",
+      "update": "Actualizar"
+    }
   },
-  "clientRoutines": {
-    "cedula": "Cédula",
-    "idCliente": "ID Cliente",
-    "tel": "Tel"
+  "clientsRoutines": {
+    "idCard": "Cédula",
+    "clientId": "ID de Cliente",
+    "phone": "Teléfono"
   },
   "categories": {
-    "gestionDeCategoriasDeEjercicio": "Gestión de Categorías de Ejercicio",
-    "buscarCategoria": "Buscar categoría...",
-    "nuevaCategoria": "Nueva Categoría",
-    "nombreDeCategoria": "Nombre de Categoría",
-    "acciones": "Acciones",
-    "editar": "Editar",
-    "borrar": "Borrar"
+    "title": "Gestión de Categorías de Ejercicio",
+    "newCategory": "+ Nueva Categoría",
+    "searchPlaceholder": "Buscar categoría...",
+    "name": "Nombre de Categoría",
+    "editTitle": "Editar Categoría",
+    "newTitle": "Nueva Categoría",
+    "namePlaceholder": "Nombre de la Categoría"
+  },
+  "clientForm": {
+    "profileAlt": "Foto de perfil",
+    "idPersonaLabel": "Cédula / ID Persona",
+    "idPersonaPlaceholder": "Digite el número de cédula",
+    "firstNameLabel": "Nombre",
+    "firstNamePlaceholder": "Ingrese el nombre",
+    "lastNameLabel": "Apellidos",
+    "lastNamePlaceholder": "Ingrese los apellidos",
+    "birthDateLabel": "Fecha de Nacimiento",
+    "sexLabel": "Sexo",
+    "male": "Masculino",
+    "female": "Femenino",
+    "phoneLabel": "Teléfono",
+    "phonePlaceholder": "Ingrese el teléfono",
+    "emailLabel": "Correo Electrónico",
+    "emailPlaceholder": "Ingrese el correo electrónico",
+    "addressLabel": "Dirección",
+    "addressPlaceholder": "Ingrese la dirección",
+    "emergencyNameLabel": "Nombre Contacto Emergencia",
+    "emergencyNamePlaceholder": "Ingrese nombre de contacto de emergencia",
+    "emergencyPhoneLabel": "Teléfono Contacto Emergencia",
+    "emergencyPhonePlaceholder": "Ingrese teléfono de contacto de emergencia",
+    "activeLabel": "Activo",
+    "updateButton": "Actualizar Cliente",
+    "registerButton": "Registrar Cliente"
+  },
+  "employeesForm": {
+    "label": {
+      "name": "Nombre",
+      "lastname": "Apellidos",
+      "id": "Cédula",
+      "role": "Rol",
+      "email": "Correo Electrónico",
+      "phone": "Teléfono",
+      "birthDate": "Fecha de Nacimiento",
+      "gender": "Sexo",
+      "address": "Dirección",
+      "emergencyContact": "Contacto de Emergencia",
+      "emergencyPhone": "Teléfono de Emergencia"
+    },
+    "placeholder": {
+      "selectRole": "Seleccione un rol"
+    },
+    "role": {
+      "instructor": "Instructor",
+      "janitor": "Conserje",
+      "technician": "Técnico",
+      "assistant": "Auxiliar"
+    },
+    "gender": {
+      "male": "Masculino",
+      "female": "Femenino",
+      "other": "Otro"
+    },
+    "button": {
+      "update": "Actualizar",
+      "register": "Registrar"
+    }
+  },
+  "routines": {
+    "searchLabel": "Buscar Cliente por ID",
+    "searchPlaceholder": "Ingresa el ID de cliente",
+    "searchButton": "Buscar",
+    "title": "Rutinas del Cliente",
+    "header": {
+      "creationDate": "Fecha Creación",
+      "objective": "Objetivo",
+      "report": "Reporte"
+    },
+    "noRoutines": "No se encontraron rutinas para este cliente.",
+    "downloadPdfTitle": "Descargar PDF"
+  },
+  "trainerPanel": {
+    "title": "Panel de Entrenador",
+    "subtitle": "Bienvenido al sistema de gestión de rutinas",
+    "activeRoutines": "Rutinas Activas",
+    "activeRoutinesDetail": "3 nuevas esta semana",
+    "totalClients": "Clientes Totales",
+    "totalClientsDetail": "2 nuevos este mes",
+    "routinesToRenew": "Rutinas por Renovar",
+    "routinesToRenewDetail": "Próximos 7 días",
+    "recentRoutines": "Rutinas Recientes",
+    "viewAll": "Ver todas",
+    "column": {
+      "client": "Cliente",
+      "date": "Fecha",
+      "objective": "Objetivo"
+    },
+    "noObjective": "Sin objetivo",
+    "view": "Ver"
+  },
+  "common": {
+    "actions": "Acciones",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "loading": "Cargando...",
+    "select": "Seleccione..."
   }
 }

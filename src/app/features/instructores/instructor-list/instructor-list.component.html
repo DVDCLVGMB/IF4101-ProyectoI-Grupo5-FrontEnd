@@ -1,17 +1,17 @@
 <div class="d-flex justify-content-between align-items-center mb-3">
-  <h2>Instructores</h2>
+  <h2>{{ 'instructors.title' | translate }}</h2>
   <input class="form-control w-25"
-         placeholder="Buscar instructor..."
+         placeholder="{{ 'instructors.searchPlaceholder' | translate }}"
          [(ngModel)]="filtro" />
 </div>
 
 <table class="table table-hover table-bordered align-middle">
   <thead class="table-light">
     <tr class="text-center">
-      <th>Instructor</th>
-      <th>Teléfono</th>
-      <th>Email</th>
-      <th>Fecha Nac.</th>
+      <th>{{ 'instructors.header.name' | translate }}</th>
+      <th>{{ 'instructors.header.phone' | translate }}</th>
+      <th>{{ 'instructors.header.email' | translate }}</th>
+      <th>{{ 'instructors.header.birthDate' | translate }}</th>
     </tr>
   </thead>
   <tbody>
@@ -30,7 +30,9 @@
       <td class="text-center">{{ ins.fechaNacimiento | date:'dd/MM/yyyy' }}</td>
     </tr>
     <tr *ngIf="filtrarInstructores().length === 0">
-      <td colspan="4" class="text-center">No hay instructores que coincidan.</td>
+      <td colspan="4" class="text-center">
+        {{ 'instructors.noMatches' | translate }}
+      </td>
     </tr>
   </tbody>
 </table>

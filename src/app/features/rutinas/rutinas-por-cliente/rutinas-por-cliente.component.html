@@ -1,21 +1,19 @@
-<!-- src/app/features/rutinas-por-cliente/rutinas-por-cliente.component.html -->
-
 <div class="container mt-4">
 
   <!-- BARRA DE BÚSQUEDA: solo aparece cuando NO hay un clienteId válido -->
   <div *ngIf="!clienteId" class="row mb-4">
     <div class="col-12 col-md-6">
-      <label for="inputClienteId" class="form-label">Buscar Cliente por ID</label>
+      <label for="inputClienteId" class="form-label">
+        {{ "routines.searchLabel" | translate }}
+      </label>
       <div class="input-group">
         <input type="number"
                id="inputClienteId"
                class="form-control"
-               placeholder="Ingresa el ID de cliente"
+               placeholder="{{ 'routines.searchPlaceholder' | translate }}"
                [(ngModel)]="clienteIdBuscado" />
-        <button class="btn btn-primary"
-                (click)="buscarCliente()"
-                type="button">
-          Buscar
+        <button class="btn btn-primary" (click)="buscarCliente()" type="button">
+          {{ "routines.searchButton" | translate }}
         </button>
       </div>
     </div>
@@ -23,28 +21,30 @@
 
   <!-- SI ya hay un clienteId (viniendo de la ruta o de la búsqueda), muestra sus rutinas -->
   <div *ngIf="clienteId">
-    <h3>Rutinas del Cliente {{ clienteId }}</h3>
+    <h3>
+      {{ "routines.title" | translate }} {{ clienteId }}
+    </h3>
 
     <table class="table table-bordered table-hover mt-3">
       <thead class="table-light text-center">
         <tr>
-          <th>Fecha Creación</th>
-          <th>Objetivo</th>
-          <th>Reporte</th>
+          <th>{{ "routines.header.creationDate" | translate }}</th>
+          <th>{{ "routines.header.objective" | translate }}</th>
+          <th>{{ "routines.header.report" | translate }}</th>
         </tr>
       </thead>
       <tbody>
         <!-- Mensaje si no hay rutinas para este cliente -->
         <tr *ngIf="rutinas.length === 0">
           <td colspan="3" class="text-center">
-            No se encontraron rutinas para este cliente.
+            {{ "routines.noRoutines" | translate }}
           </td>
         </tr>
         <!-- Listado de rutinas -->
         <tr *ngFor="let r of rutinas" class="align-middle text-center">
           <!-- Fecha Creación -->
           <td>
-            {{ r.fechaCreacion | date:'dd/MM/yyyy' }}
+            {{ r.fechaCreacion | date: 'dd/MM/yyyy' }}
           </td>
 
           <!-- Objetivo -->
@@ -56,7 +56,7 @@
           <td>
             <button class="btn btn-sm btn-outline-secondary"
                     (click)="descargarPDF(r.idRutina!)"
-                    title="Descargar PDF">
+                    [title]="'routines.downloadPdfTitle' | translate">
               <i class="bi bi-file-earmark-pdf"></i>
             </button>
           </td>

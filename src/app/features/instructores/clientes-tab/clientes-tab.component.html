@@ -6,13 +6,20 @@
     <div class="card h-100">
       <img [src]="cliente.imagenRuta || 'https://cdn-icons-png.flaticon.com/512/847/847969.png'"
            class="card-img-top"
-           alt="Foto {{cliente.nombre}}">
+           alt="{{ 'clientsRoutines.photoAlt' | translate }} {{ cliente.nombre }}">
       <div class="card-body">
         <h5 class="card-title">{{ cliente.nombre }} {{ cliente.apellidos }}</h5>
-        <p class="card-text">Cédula: {{ cliente.idPersona }}</p>
-        <p class="card-text">ID Cliente: {{ cliente.idCliente }}</p>
-        <p class="card-text">Tel: {{ cliente.telefono }}</p>
+        <p class="card-text">
+          {{ 'clientsRoutines.idCard' | translate }}: {{ cliente.idPersona }}
+        </p>
+        <p class="card-text">
+          {{ 'clientsRoutines.clientId' | translate }}: {{ cliente.idCliente }}
+        </p>
+        <p class="card-text">
+          {{ 'clientsRoutines.phone' | translate }}: {{ cliente.telefono }}
+        </p>
       </div>
     </div>
   </div>
 </div>
+

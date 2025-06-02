@@ -1,29 +1,43 @@
 <div class="container">
   <div class="header">
-    <h2>Gestión de Categorías de Ejercicio</h2>
-    <button (click)="abrirModalNueva()" class="btn btn-primary">+ Nueva Categoría</button>
+    <h2>{{ 'categories.title' | translate }}</h2>
+    <button (click)="abrirModalNueva()" class="btn btn-primary">
+      {{ 'categories.newCategory' | translate }}
+    </button>
   </div>
 
-  <input type="text" placeholder="Buscar categoría..." [(ngModel)]="filtro" (input)="filtrarCategorias()" class="search-bar" />
+  <input
+    type="text"
+    placeholder="{{ 'categories.searchPlaceholder' | translate }}"
+    [(ngModel)]="filtro"
+    (input)="filtrarCategorias()"
+    class="search-bar"
+  />
 
   <table class="table">
     <thead>
       <tr>
-        <th>Nombre de Categoría</th>
-        <th>Acciones</th>
+        <th>{{ 'categories.name' | translate }}</th>
+        <th>{{ 'common.actions' | translate }}</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let categoria of categoriasFiltradas">
         <td>{{ categoria.nombreCategoria }}</td>
         <td class="text-center">
-          <button class="btn btn-sm btn-outline-primary me-2" (click)="abrirModalEditar(categoria)">
-            ✏️ Editar
+          <button
+            class="btn btn-sm btn-outline-primary me-2"
+            (click)="abrirModalEditar(categoria)"
+          >
+            {{ 'common.edit' | translate }}
           </button>
-          <button class="btn btn-sm btn-outline-danger" (click)="eliminarCategoria(categoria.idCategoriaEjercicio)">
-            🗑️ Eliminar
+          <button
+            class="btn btn-sm btn-outline-danger"
+            (click)="eliminarCategoria(categoria.idCategoriaEjercicio)"
+          >
+            {{ 'common.delete' | translate }}
           </button>
-        </td>        
+        </td>
       </tr>
     </tbody>
   </table>
@@ -31,12 +45,22 @@
   <!-- Modal -->
   <div class="modal" *ngIf="mostrarModal">
     <div class="modal-content">
-      <h3>{{ editando ? 'Editar Categoría' : 'Nueva Categoría' }}</h3>
+      <h3>
+        {{ editando ? ('categories.editTitle' | translate) : ('categories.newTitle' | translate) }}
+      </h3>
       <form [formGroup]="categoriaForm" (ngSubmit)="guardarCategoria()">
-        <input type="text" formControlName="nombreCategoria" placeholder="Nombre de la Categoría" />
+        <input
+          type="text"
+          formControlName="nombreCategoria"
+          placeholder="{{ 'categories.namePlaceholder' | translate }}"
+        />
         <div class="buttons">
-          <button type="submit" class="btn btn-success">Guardar</button>
-          <button type="button" (click)="cerrarModal()" class="btn btn-secondary">Cancelar</button>
+          <button type="submit" class="btn btn-success">
+            {{ 'common.save' | translate }}
+          </button>
+          <button type="button" (click)="cerrarModal()" class="btn btn-secondary">
+            {{ 'common.cancel' | translate }}
+          </button>
         </div>
       </form>
     </div>

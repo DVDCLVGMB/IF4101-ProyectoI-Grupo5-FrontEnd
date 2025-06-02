@@ -53,146 +53,175 @@
     </button>
   </div>
 
-<div class="row g-3">
-  <!-- Foto (opcional) -->
-  <!--<div class="col-12 d-flex justify-content-center my-3">
+  <div class="row g-3">
+    <!-- Foto (opcional) -->
+    <!--<div class="col-12 d-flex justify-content-center my-3">
     <img [src]="empleado.imagenRuta || 'https://cdn-icons-png.flaticon.com/512/847/847969.png'"
          class="rounded-circle"
          alt="Foto"
          style="width: 100px; height: 100px; object-fit: cover; border:1px solid #ccc;">
   </div>-->
 
-  <!-- Nombre -->
-  <div class="col-md-6">
-    <label for="nombre" class="form-label">Nombre</label>
-    <input id="nombre"
-           class="form-control"
-           [(ngModel)]="empleado.nombre"
-           name="nombre"
-           required>
-  </div>
+    <!-- Nombre -->
+    <div class="col-md-6">
+      <label for="nombre" class="form-label">
+        {{ "employeesForm.label.name" | translate }}
+      </label>
+      <input id="nombre"
+             class="form-control"
+             [(ngModel)]="empleado.nombre"
+             name="nombre"
+             required />
+    </div>
 
-  <!-- Apellidos -->
-  <div class="col-md-6">
-    <label for="apellidos" class="form-label">Apellidos</label>
-    <input id="apellidos"
-           class="form-control"
-           [(ngModel)]="empleado.apellidos"
-           name="apellidos"
-           required>
-  </div>
+    <!-- Apellidos -->
+    <div class="col-md-6">
+      <label for="apellidos" class="form-label">
+        {{ "employeesForm.label.lastname" | translate }}
+      </label>
+      <input id="apellidos"
+             class="form-control"
+             [(ngModel)]="empleado.apellidos"
+             name="apellidos"
+             required />
+    </div>
 
-  <!-- Cédula / ID Persona -->
-  <div class="col-md-6">
-    <label for="idPersona" class="form-label">Cédula</label>
-    <input id="idPersona"
-           type="number"
-           class="form-control"
-           [(ngModel)]="empleado.idPersona"
-           name="idPersona"
-           [readonly]="isEdit"
-           required>
-  </div>
+    <!-- Cédula / ID Persona -->
+    <div class="col-md-6">
+      <label for="idPersona" class="form-label">
+        {{ "employeesForm.label.id" | translate }}
+      </label>
+      <input id="idPersona"
+             type="number"
+             class="form-control"
+             [(ngModel)]="empleado.idPersona"
+             name="idPersona"
+             [readonly]="isEdit"
+             required />
+    </div>
 
-  <!-- Rol -->
-  <div class="col-md-6">
-    <label for="rolEmpleado" class="form-label">Rol</label>
-    <select id="rolEmpleado"
-            class="form-select"
-            [(ngModel)]="empleado.rolEmpleado"
-            name="rolEmpleado"
-            required>
-      <option value="" disabled>Seleccione un rol</option>
-      <option value="Instructor">Instructor</option>
-      <option value="Conserje">Conserje</option>
-      <option value="Técnico">Técnico</option>
-      <option value="Auxiliar">Auxiliar</option>
-      <!-- …más opciones según tu negocio -->
-    </select>
-  </div>
+    <!-- Rol -->
+    <div class="col-md-6">
+      <label for="rolEmpleado" class="form-label">
+        {{ "employeesForm.label.role" | translate }}
+      </label>
+      <select id="rolEmpleado"
+              class="form-select"
+              [(ngModel)]="empleado.rolEmpleado"
+              name="rolEmpleado"
+              required>
+        <option value="" disabled>
+          {{ "employeesForm.placeholder.selectRole" | translate }}
+        </option>
+        <option value="Instructor">
+          {{ "employeesForm.role.instructor" | translate }}
+        </option>
+        <option value="Conserje">
+          {{ "employeesForm.role.janitor" | translate }}
+        </option>
+        <option value="Técnico">
+          {{ "employeesForm.role.technician" | translate }}
+        </option>
+        <option value="Auxiliar">
+          {{ "employeesForm.role.assistant" | translate }}
+        </option>
+      </select>
+    </div>
 
-  <!-- Correo Electrónico -->
-  <div class="col-md-6">
-    <label for="correoElectronico" class="form-label">Email</label>
-    <input id="correoElectronico"
-           type="email"
-           class="form-control"
-           [(ngModel)]="empleado.correoElectronico"
-           name="correoElectronico"
-           required>
-  </div>
+    <!-- Correo Electrónico -->
+    <div class="col-md-6">
+      <label for="correoElectronico" class="form-label">
+        {{ "employeesForm.label.email" | translate }}
+      </label>
+      <input id="correoElectronico"
+             type="email"
+             class="form-control"
+             [(ngModel)]="empleado.correoElectronico"
+             name="correoElectronico"
+             required />
+    </div>
 
-  <!-- Teléfono -->
-  <div class="col-md-6">
-    <label for="telefono" class="form-label">Teléfono</label>
-    <input id="telefono"
-           class="form-control"
-           [(ngModel)]="empleado.telefono"
-           name="telefono"
-           required>
-  </div>
+    <!-- Teléfono -->
+    <div class="col-md-6">
+      <label for="telefono" class="form-label">
+        {{ "employeesForm.label.phone" | translate }}
+      </label>
+      <input id="telefono"
+             class="form-control"
+             [(ngModel)]="empleado.telefono"
+             name="telefono"
+             required />
+    </div>
 
-  <!-- Fecha de Nacimiento -->
-  <div class="col-md-6">
-    <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
-    <input id="fechaNacimiento"
-           type="date"
-           class="form-control"
-           [(ngModel)]="empleado.fechaNacimiento"
-           name="fechaNacimiento"
-           required>
-  </div>
+    <!-- Fecha de Nacimiento -->
+    <div class="col-md-6">
+      <label for="fechaNacimiento" class="form-label">
+        {{ "employeesForm.label.birthDate" | translate }}
+      </label>
+      <input id="fechaNacimiento"
+             type="date"
+             class="form-control"
+             [(ngModel)]="empleado.fechaNacimiento"
+             name="fechaNacimiento"
+             required />
+    </div>
 
-  <!-- Sexo -->
-  <div class="col-md-6">
-    <label for="sexo" class="form-label">Sexo</label>
-    <select id="sexo"
-            class="form-select"
-            [(ngModel)]="empleado.sexo"
-            name="sexo"
-            required>
-      <option value="M">Masculino</option>
-      <option value="F">Femenino</option>
-      <option value="O">Otro</option>
-    </select>
-  </div>
+    <!-- Sexo -->
+    <div class="col-md-6">
+      <label for="sexo" class="form-label">
+        {{ "employeesForm.label.gender" | translate }}
+      </label>
+      <select id="sexo"
+              class="form-select"
+              [(ngModel)]="empleado.sexo"
+              name="sexo"
+              required>
+        <option value="M">{{ "employeesForm.gender.male" | translate }}</option>
+        <option value="F">{{ "employeesForm.gender.female" | translate }}</option>
+        <option value="O">{{ "employeesForm.gender.other" | translate }}</option>
+      </select>
+    </div>
 
-  <!-- Dirección -->
-  <div class="col-12">
-    <label for="direccion" class="form-label">Dirección</label>
-    <input id="direccion"
-           class="form-control"
-           [(ngModel)]="empleado.direccion"
-           name="direccion">
-  </div>
+    <!-- Dirección -->
+    <div class="col-12">
+      <label for="direccion" class="form-label">
+        {{ "employeesForm.label.address" | translate }}
+      </label>
+      <input id="direccion"
+             class="form-control"
+             [(ngModel)]="empleado.direccion"
+             name="direccion" />
+    </div>
 
-  <!-- Contacto de Emergencia -->
-  <div class="col-md-6">
-    <label for="nombreContactoEmergencia" class="form-label">Contacto Emergencia</label>
-    <input id="nombreContactoEmergencia"
-           class="form-control"
-           [(ngModel)]="empleado.nombreContactoEmergencia"
-           name="nombreContactoEmergencia">
-  </div>
-  <div class="col-md-6">
-    <label for="telContactoEmergencia" class="form-label">Teléfono Emergencia</label>
-    <input id="telContactoEmergencia"
-           class="form-control"
-           [(ngModel)]="empleado.telContactoEmergencia"
-           name="telContactoEmergencia">
-  </div>
+    <!-- Contacto Emergencia -->
+    <div class="col-md-6">
+      <label for="nombreContactoEmergencia" class="form-label">
+        {{ "employeesForm.label.emergencyContact" | translate }}
+      </label>
+      <input id="nombreContactoEmergencia"
+             class="form-control"
+             [(ngModel)]="empleado.nombreContactoEmergencia"
+             name="nombreContactoEmergencia" />
+    </div>
+    <div class="col-md-6">
+      <label for="telContactoEmergencia" class="form-label">
+        {{ "employeesForm.label.emergencyPhone" | translate }}
+      </label>
+      <input id="telContactoEmergencia"
+             class="form-control"
+             [(ngModel)]="empleado.telContactoEmergencia"
+             name="telContactoEmergencia" />
+    </div>
 
-  <!-- Botones -->
-  <div class="col-12 d-flex justify-content-end gap-2">
-    <!--<button type="button"
-            class="btn btn-outline-secondary"
-            (click)="cancelar()">
-      Cancelar
-    </button>-->
-    <button type="submit"
-            class="btn btn-primary">
-      {{ isEdit ? 'Actualizar' : 'Registrar' }}
-    </button>
+    <!-- Botones -->
+    <div class="col-12 d-flex justify-content-end gap-2">
+      <button type="submit" class="btn btn-primary">
+        {{
+        isEdit
+         ? ("employeesForm.button.update" | translate)
+         : ("employeesForm.button.register" | translate)
+        }}
+      </button>
+    </div>
   </div>
-</div>
 </form>

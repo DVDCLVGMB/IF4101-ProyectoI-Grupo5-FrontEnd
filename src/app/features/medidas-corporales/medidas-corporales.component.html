@@ -1,53 +1,49 @@
 <div class="container">
   <div class="header d-flex justify-content-between align-items-center mb-4">
-    <h2>Gestión de Medidas Corporales</h2>
+    <h2>{{ 'measures.title' | translate }}</h2>
     <button (click)="abrirModalNueva()" class="btn btn-primary">
-      ➕ Nueva Medida
+      ➕ {{ 'measures.new' | translate }}
     </button>
   </div>
 
   <!-- Buscador -->
-  <input
-    type="text"
-    placeholder="Buscar medidas..."
-    [(ngModel)]="filtro"
-    (input)="filtrarMedidas()"
-    class="form-control mb-4"
-  />
+  <input type="text"
+         placeholder="{{ 'measures.searchPlaceholder' | translate }}"
+         [(ngModel)]="filtro"
+         (input)="filtrarMedidas()"
+         class="form-control mb-4" />
 
   <!-- Tabla de Medidas -->
   <div class="card shadow-sm">
     <div class="card-body">
-      <h5 class="card-title mb-4">Listado de Medidas Registradas</h5>
+      <h5 class="card-title mb-4">{{ 'measures.listTitle' | translate }}</h5>
 
       <div class="table-responsive">
         <table class="table table-hover align-middle">
           <thead class="table-light">
             <tr>
-              <th>Imagen</th>
-              <th>Nombre</th>
-              <th>Unidad</th>
-              <th class="text-center">Acciones</th>
+              <th>{{ 'measures.header.image' | translate }}</th>
+              <th>{{ 'measures.header.name' | translate }}</th>
+              <th>{{ 'measures.header.unit' | translate }}</th>
+              <th class="text-center">{{ 'measures.header.actions' | translate }}</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let medida of medidasFiltradas">
               <td>
-                <img
-                  [src]="medida.imagen || 'https://cdn-icons-png.flaticon.com/512/3502/3502688.png'"
-                  class="rounded-circle img-thumbnail"
-                  style="width: 50px; height: 50px; object-fit: cover;"
-                  alt="Imagen de {{medida.nombreMedida}}"
-                />
+                <img [src]="medida.imagen || 'https://cdn-icons-png.flaticon.com/512/3502/3502688.png'"
+                     class="rounded-circle img-thumbnail"
+                     style="width: 50px; height: 50px; object-fit: cover;"
+                     alt="{{ medida.nombreMedida }}" />
               </td>
               <td>{{ medida.nombreMedida }}</td>
               <td>{{ medida.unidadMedida }}</td>
               <td class="text-center">
                 <button (click)="abrirModalEditar(medida)" class="btn btn-sm btn-outline-primary me-2">
-                  ✏️ Editar
+                  ✏️ {{ 'measures.edit' | translate }}
                 </button>
                 <button (click)="eliminarMedida(medida.codMedida!)" class="btn btn-sm btn-outline-danger">
-                  🗑️ Eliminar
+                  🗑️ {{ 'measures.delete' | translate }}
                 </button>
               </td>
             </tr>
@@ -65,15 +61,18 @@
       <div class="modal-content p-4 rounded-4 shadow-sm">
         <div class="modal-header border-0">
           <h5 class="modal-title">
-            {{ editando ? 'Editar Medida' : 'Nueva Medida' }}
+            {{
+              editando
+                ? ('measures.editTitle' | translate)
+                : ('measures.newTitle' | translate)
+            }}
           </h5>
           <button type="button" class="btn-close" (click)="cerrarModal()"></button>
         </div>
         <div class="modal-body">
           <!-- Formulario reactivo insertado como componente -->
-          <app-medida-insert-reactive
-            [medidaAEditar]="medidaSeleccionada"
-            (guardado)="cerrarModal()">
+          <app-medida-insert-reactive [medidaAEditar]="medidaSeleccionada"
+                                      (guardado)="cerrarModal()">
           </app-medida-insert-reactive>
         </div>
       </div>

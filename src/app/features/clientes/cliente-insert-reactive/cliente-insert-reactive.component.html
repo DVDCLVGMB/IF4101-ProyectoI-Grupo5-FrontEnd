@@ -1,137 +1,191 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
-<!--Imagen de perfil con efecto de carga -->
-<div class="d-flex flex-column align-items-center mb-4 position-relative">
-  
-<!-- Spinner de carga -->
-<div *ngIf="cargandoImagen" class="d-flex justify-content-center my-3">
-  <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
-    <span class="visually-hidden">Cargando...</span>
-  </div>
-</div>
+  <!--Imagen de perfil con efecto de carga -->
+  <div class="d-flex flex-column align-items-center mb-4 position-relative">
 
-<!-- Barra de progreso mientras carga -->
-<div *ngIf="cargandoImagen" class="w-100 mb-2">
-  <progress [value]="porcentajeCarga" max="100" class="w-100"></progress>
-  <small class="d-block text-center">{{ porcentajeCarga }}%</small>
-</div>
-
-
-  <!-- Imagen o Spinner -->
-  <div class="position-relative" style="width: 120px; height: 120px;">
-    <!-- Spinner cuando está cargando -->
-    <div *ngIf="cargandoImagen" 
-         class="spinner-border text-primary position-absolute top-50 start-50 translate-middle" 
-         style="width: 3rem; height: 3rem;" role="status">
+    <!-- Spinner de carga -->
+    <div *ngIf="cargandoImagen" class="d-flex justify-content-center my-3">
+      <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+        <span class="visually-hidden">{{ 'common.loading' | translate }}</span>
+      </div>
     </div>
 
-    <!-- Imagen (cuando no está cargando) -->
-    <img 
-    *ngIf="!cargandoImagen"
-    [src]="imagenPreview || 'https://cdn-icons-png.flaticon.com/512/3177/3177440.png'"
-    class="rounded-circle shadow-sm w-100 h-100 fade-in"
-    style="object-fit: cover; border: 2px solid #dee2e6;"
-    alt="Foto de perfil"
-  />
-  
+    <!-- Barra de progreso mientras carga -->
+    <div *ngIf="cargandoImagen" class="w-100 mb-2">
+      <progress [value]="porcentajeCarga" max="100" class="w-100"></progress>
+      <small class="d-block text-center">{{ porcentajeCarga }}%</small>
+    </div>
+
+
+    <!-- Imagen o Spinner -->
+    <div class="position-relative" style="width: 120px; height: 120px;">
+      <!-- Spinner cuando está cargando -->
+      <div *ngIf="cargandoImagen"
+           class="spinner-border text-primary position-absolute top-50 start-50 translate-middle"
+           style="width: 3rem; height: 3rem;" role="status">
+      </div>
+
+      <!-- Imagen (cuando no está cargando) -->
+      <img *ngIf="!cargandoImagen"
+           [src]="imagenPreview || 'https://cdn-icons-png.flaticon.com/512/3177/3177440.png'"
+           class="rounded-circle shadow-sm w-100 h-100 fade-in"
+           style="object-fit: cover; border: 2px solid #dee2e6;"
+           alt="{{ 'clientForm.profileAlt' | translate }}" />
+
+    </div>
+
+    <!-- Input oculto de imagen -->
+    <input type="file"
+           #fileInput
+           accept="image/*"
+           (change)="onFileSelected($event)"
+           hidden />
+
+    <!-- Botón de cargar imagen -->
+    <button type="button"
+            class="btn btn-sm btn-light shadow-sm border position-absolute d-flex justify-content-center align-items-center"
+            style="bottom: 0; right: 0; width: 35px; height: 35px; border-radius: 50%;"
+            (click)="fileInput.click()">
+      <i class="bi bi-camera-fill"></i>
+    </button>
+
   </div>
-
-  <!-- Input oculto de imagen -->
-  <input 
-    type="file" 
-    #fileInput 
-    accept="image/*"
-    (change)="onFileSelected($event)" 
-    hidden
-  />
-
-  <!-- Botón de cargar imagen -->
-  <button 
-    type="button" 
-    class="btn btn-sm btn-light shadow-sm border position-absolute d-flex justify-content-center align-items-center"
-    style="bottom: 0; right: 0; width: 35px; height: 35px; border-radius: 50%;" 
-    (click)="fileInput.click()"
-  >
-    <i class="bi bi-camera-fill"></i>
-  </button>
-
-</div>
 
 
   <!-- AHORA campos normales -->
-
   <!-- ID Persona -->
   <div class="mb-3">
-    <label for="idPersona" class="form-label">Cédula / ID Persona</label>
-    <input id="idPersona" type="number" class="form-control" formControlName="idPersona" placeholder="Digite el número de cédula" />
+    <label for="idPersona" class="form-label">
+      {{ 'clientForm.idPersonaLabel' | translate }}
+    </label>
+    <input id="idPersona"
+           type="number"
+           class="form-control"
+           formControlName="idPersona"
+           placeholder="{{ 'clientForm.idPersonaPlaceholder' | translate }}" />
   </div>
 
   <!-- Nombre -->
   <div class="mb-3">
-    <label for="nombre" class="form-label">Nombre</label>
-    <input id="nombre" class="form-control" formControlName="nombre" />
+    <label for="nombre" class="form-label">
+      {{ 'clientForm.firstNameLabel' | translate }}
+    </label>
+    <input id="nombre"
+           class="form-control"
+           formControlName="nombre"
+           placeholder="{{ 'clientForm.firstNamePlaceholder' | translate }}" />
   </div>
 
   <!-- Apellidos -->
   <div class="mb-3">
-    <label for="apellidos" class="form-label">Apellidos</label>
-    <input id="apellidos" class="form-control" formControlName="apellidos" />
+    <label for="apellidos" class="form-label">
+      {{ 'clientForm.lastNameLabel' | translate }}
+    </label>
+    <input id="apellidos"
+           class="form-control"
+           formControlName="apellidos"
+           placeholder="{{ 'clientForm.lastNamePlaceholder' | translate }}" />
   </div>
 
   <!-- Fecha de nacimiento -->
   <div class="mb-3">
-    <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
-    <input id="fechaNacimiento" type="date" class="form-control" formControlName="fechaNacimiento" />
+    <label for="fechaNacimiento" class="form-label">
+      {{ 'clientForm.birthDateLabel' | translate }}
+    </label>
+    <input id="fechaNacimiento"
+           type="date"
+           class="form-control"
+           formControlName="fechaNacimiento" />
   </div>
 
   <!-- Sexo -->
   <div class="mb-3">
-    <label for="sexo" class="form-label">Sexo</label>
-    <select id="sexo" class="form-select" formControlName="sexo">
-      <option value="">Seleccione</option>
-      <option value="M">Masculino</option>
-      <option value="F">Femenino</option>
+    <label for="sexo" class="form-label">
+      {{ 'clientForm.sexLabel' | translate }}
+    </label>
+    <select id="sexo"
+            class="form-select"
+            formControlName="sexo">
+      <option value="">{{ 'common.select' | translate }}</option>
+      <option value="M">{{ 'clientForm.male' | translate }}</option>
+      <option value="F">{{ 'clientForm.female' | translate }}</option>
     </select>
   </div>
 
+
   <!-- Teléfono -->
   <div class="mb-3">
-    <label for="telefono" class="form-label">Teléfono</label>
-    <input id="telefono" class="form-control" formControlName="telefono" />
+    <label for="telefono" class="form-label">
+      {{ 'clientForm.phoneLabel' | translate }}
+    </label>
+    <input id="telefono"
+           class="form-control"
+           formControlName="telefono"
+           placeholder="{{ 'clientForm.phonePlaceholder' | translate }}" />
   </div>
 
   <!-- Correo electrónico -->
   <div class="mb-3">
-    <label for="correoElectronico" class="form-label">Correo electrónico</label>
-    <input id="correoElectronico" class="form-control" formControlName="correoElectronico" />
+    <label for="correoElectronico" class="form-label">
+      {{ 'clientForm.emailLabel' | translate }}
+    </label>
+    <input id="correoElectronico"
+           type="email"
+           class="form-control"
+           formControlName="correoElectronico"
+           placeholder="{{ 'clientForm.emailPlaceholder' | translate }}" />
   </div>
 
   <!-- Dirección -->
   <div class="mb-3">
-    <label for="direccion" class="form-label">Dirección</label>
-    <input id="direccion" class="form-control" formControlName="direccion" />
+    <label for="direccion" class="form-label">
+      {{ 'clientForm.addressLabel' | translate }}
+    </label>
+    <input id="direccion"
+           class="form-control"
+           formControlName="direccion"
+           placeholder="{{ 'clientForm.addressPlaceholder' | translate }}" />
   </div>
 
   <!-- Contacto Emergencia -->
   <div class="mb-3">
-    <label for="nombreContactoEmergencia" class="form-label">Nombre Contacto Emergencia</label>
-    <input id="nombreContactoEmergencia" class="form-control" formControlName="nombreContactoEmergencia" />
+    <label for="nombreContactoEmergencia" class="form-label">
+      {{ 'clientForm.emergencyNameLabel' | translate }}
+    </label>
+    <input id="nombreContactoEmergencia"
+           class="form-control"
+           formControlName="nombreContactoEmergencia"
+           placeholder="{{ 'clientForm.emergencyNamePlaceholder' | translate }}" />
   </div>
 
   <div class="mb-3">
-    <label for="telContactoEmergencia" class="form-label">Teléfono Contacto Emergencia</label>
-    <input id="telContactoEmergencia" class="form-control" formControlName="telContactoEmergencia" />
+    <label for="telContactoEmergencia" class="form-label">
+      {{ 'clientForm.emergencyPhoneLabel' | translate }}
+    </label>
+    <input id="telContactoEmergencia"
+           class="form-control"
+           formControlName="telContactoEmergencia"
+           placeholder="{{ 'clientForm.emergencyPhonePlaceholder' | translate }}" />
   </div>
 
   <!-- Activo -->
   <div class="form-check mb-4">
-    <input id="activo" type="checkbox" class="form-check-input" formControlName="activo" />
-    <label for="activo" class="form-check-label">Activo</label>
+    <input id="activo"
+           type="checkbox"
+           class="form-check-input"
+           formControlName="activo" />
+    <label for="activo" class="form-check-label">
+      {{ 'clientForm.activeLabel' | translate }}
+    </label>
   </div>
 
   <!-- Botón -->
   <button type="submit" class="btn btn-primary w-100">
-    {{ clienteAEditar ? 'Actualizar Cliente' : 'Registrar Cliente' }}
+    {{
+ clienteAEditar
+        ? ('clientForm.updateButton' | translate)
+        : ('clientForm.registerButton' | translate)
+    }}
   </button>
 
 </form>

@@ -1,41 +1,48 @@
 <!-- Botón para abrir el modal de nuevo ejercicio -->
 <div class="d-flex justify-content-end mb-4">
-  <button class="btn btn-primary" (click)="abrirModal()">➕ Nuevo Ejercicio</button>
+  <button class="btn btn-primary" (click)="abrirModal()">
+    {{ 'exercises.newExercise' | translate }}
+  </button>
 </div>
 
 <!-- Tabla de ejercicios existentes -->
 <div class="card shadow-sm">
   <div class="card-body">
-    <h5 class="card-title mb-4">Listado de Ejercicios Registrados</h5>
+    <h5 class="card-title mb-4">
+      {{ 'exercises.listTitle' | translate }}
+    </h5>
 
     <div class="table-responsive">
       <table class="table table-hover align-middle">
         <thead class="table-light">
           <tr>
-            <th>Imagen</th>
-            <th>Nombre del Ejercicio</th>
-            <th>Categoría</th>
-            <th class="text-center">Acciones</th>
+            <th>{{ 'exercises.header.image' | translate }}</th>
+            <th>{{ 'exercises.header.name' | translate }}</th>
+            <th>{{ 'exercises.header.category' | translate }}</th>
+            <th class="text-center">{{ 'exercises.header.actions' | translate }}</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let ejercicio of ejercicios">
             <td>
-              <img [src]="ejercicio.imagen || 'https://cdn-icons-png.flaticon.com/512/3177/3177440.png'" 
+              <img [src]="ejercicio.imagen || 'https://cdn-icons-png.flaticon.com/512/3177/3177440.png'"
                    class="rounded" width="60" height="60" style="object-fit: cover;">
             </td>
             <td>{{ ejercicio.nombreEjercicio }}</td>
             <td>
               <span class="badge bg-success">
-                {{ ejercicio.categoriaEjercicio?.[0]?.nombreCategoria || 'Sin Categoría' }}
+                {{
+                  ejercicio.categoriaEjercicio?.[0]?.nombreCategoria
+                   || ('exercises.noCategory' | translate)
+                }}
               </span>
             </td>
             <td class="text-center">
               <button class="btn btn-sm btn-outline-primary me-2" (click)="editarEjercicio(ejercicio)">
-                ✏️ Editar
+                {{ 'exercises.edit' | translate }}
               </button>
               <button class="btn btn-sm btn-outline-danger" (click)="eliminarEjercicio(ejercicio.idEjercicio!)">
-                🗑️ Eliminar
+                {{ 'exercises.delete' | translate }}
               </button>
             </td>
           </tr>
@@ -51,15 +58,21 @@
   <div class="modal fade show d-block" style="z-index: 1050;">
     <div class="modal-dialog">
       <div class="modal-content shadow-lg">
-        
+
         <div class="modal-header">
-          <h5 class="modal-title">{{ modoEditar ? 'Editar Ejercicio' : 'Registrar Nuevo Ejercicio' }}</h5>
+          <h5 class="modal-title">
+            {{
+              modoEditar
+               ? ('exercises.modal.editTitle' | translate)
+               : ('exercises.modal.newTitle' | translate)
+            }}
+          </h5>
           <button type="button" class="btn-close" (click)="cerrarModal()"></button>
         </div>
 
         <div class="modal-body">
           <form [formGroup]="formulario" (ngSubmit)="guardarEjercicio()">
-            
+
             <!-- Imagen -->
             <div class="mb-4 text-center position-relative">
               <div *ngIf="cargandoImagen" class="d-flex justify-content-center my-3">
@@ -72,27 +85,41 @@
               </div>
 
               <img *ngIf="!cargandoImagen"
-                [src]="imagenPreview || 'https://cdn-icons-png.flaticon.com/512/3177/3177440.png'"
-                class="rounded-circle shadow-sm mb-3" 
-                width="120" height="120" 
-                style="object-fit: cover;" 
-                alt="Vista previa de imagen">
+                   [src]="imagenPreview || 'https://cdn-icons-png.flaticon.com/512/3177/3177440.png'"
+                   class="rounded-circle shadow-sm mb-3"
+                   width="120" height="120"
+                   style="object-fit: cover;"
+                   alt="{{ 'exercises.modal.imagePreviewAlt' | translate }}">
 
               <input type="file" #fileInput hidden (change)="onFileSelected($event)" accept="image/*">
-              <button type="button" class="btn btn-outline-secondary btn-sm" (click)="fileInput.click()">📷 Cargar Imagen</button>
+              <button type="button" class="btn btn-outline-secondary btn-sm" (click)="fileInput.click()">
+                {{ 'exercises.modal.uploadImage' | translate }}
+              </button>
             </div>
 
             <!-- Nombre del ejercicio -->
             <div class="mb-3">
-              <label for="nombreEjercicio" class="form-label">Nombre del Ejercicio</label>
-              <input id="nombreEjercicio" type="text" class="form-control" formControlName="nombreEjercicio" placeholder="Ej: Sentadilla con barra" required>
+              <label for="nombreEjercicio" class="form-label">
+                {{ 'exercises.modal.nameLabel' | translate }}
+              </label>
+              <input id="nombreEjercicio"
+                     type="text"
+                     class="form-control"
+                     formControlName="nombreEjercicio"
+                     placeholder="{{ 'exercises.modal.namePlaceholder' | translate }}"
+                     required>
             </div>
 
             <!-- Categoría -->
             <div class="mb-3">
-              <label for="idCategoria" class="form-label">Categoría</label>
-              <select id="idCategoria" class="form-select" formControlName="idCategoria" required>
-                <option value="">Seleccione una categoría</option>
+              <label for="idCategoria" class="form-label">
+                {{ 'exercises.modal.categoryLabel' | translate }}
+              </label>
+              <select id="idCategoria"
+                      class="form-select"
+                      formControlName="idCategoria"
+                      required>
+                <option value="">{{ 'exercises.modal.selectCategory' | translate }}</option>
                 <option *ngFor="let categoria of categorias" [value]="categoria.idCategoriaEjercicio">
                   {{ categoria.nombreCategoria }}
                 </option>
@@ -101,9 +128,15 @@
 
             <!-- Botones de acción -->
             <div class="d-flex justify-content-end">
-              <button type="button" class="btn btn-secondary me-2" (click)="cerrarModal()">Cancelar</button>
+              <button type="button" class="btn btn-secondary me-2" (click)="cerrarModal()">
+                {{ 'exercises.modal.cancel' | translate }}
+              </button>
               <button type="submit" class="btn btn-primary" [disabled]="formulario.invalid">
-                {{ modoEditar ? 'Actualizar' : 'Guardar' }}
+                {{
+                  modoEditar
+                   ? ('exercises.modal.update' | translate)
+                   : ('exercises.modal.save' | translate)
+                }}
               </button>
             </div>
 

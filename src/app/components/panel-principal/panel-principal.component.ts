@@ -3,11 +3,12 @@
   import { RouterModule } from '@angular/router';
   import { PanelPrincipalService } from '../../services/panel-principal/panel-principal.service';  // 🔥 Importa el servicio
   import { HttpClientModule } from '@angular/common/http';
+import { TranslateModule } from '@ngx-translate/core';
 
   @Component({
     selector: 'app-panel-principal',
     standalone: true,
-    imports: [CommonModule, RouterModule, HttpClientModule],
+    imports: [CommonModule, RouterModule, HttpClientModule, TranslateModule],
     templateUrl: './panel-principal.component.html',
     styleUrls: ['./panel-principal.component.css']
   })

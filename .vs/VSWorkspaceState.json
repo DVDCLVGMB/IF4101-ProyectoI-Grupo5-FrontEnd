@@ -4,13 +4,13 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\components",
-    "\\src\\app\\components\\layout",
-    "\\src\\app\\features",
-    "\\src\\app\\features\\rutinas",
-    "\\src\\app\\features\\rutinas\\rutina-form",
-    "\\src\\app\\services",
-    "\\src\\app\\services\\rutina"
+    "\\src\\app\\components\\entrenador-panel",
+    "\\src\\app\\features\\empleados\\empleado-form",
+    "\\src\\app\\features\\empleados\\empleado-list",
+    "\\src\\app\\features\\instructores\\instructor-form",
+    "\\src\\app\\features\\instructores\\instructor-list",
+    "\\src\\assets"
   ],
-  "SelectedNode": "\\src\\app\\app.component.ts",
+  "SelectedNode": "\\src\\app\\components\\entrenador-panel\\entrenador-panel.component.html",
   "PreviewInSolutionExplorer": false
 }

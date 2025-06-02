@@ -1,100 +1,95 @@
 <div class="d-flex justify-content-between align-items-center mb-3">
-  <h2>Gestión de Clientes</h2>
+  <h2>{{ 'clients.title' | translate }}</h2>
   <button class="btn btn-primary" (click)="abrirModal()">
-    <i class="bi bi-plus-lg"></i> Nuevo Cliente
-  </button>      
+    <i class="bi bi-plus-lg"></i> {{ 'clients.new' | translate }}
+  </button>
 </div>
 
 <!-- Buscador -->
-<input
-  class="form-control mb-4"
-  placeholder="Buscar por nombre o teléfono"
-  [(ngModel)]="filtro"
+<input class="form-control mb-4"
+       placeholder="{{ 'clients.searchPlaceholder' | translate }}"
+       [(ngModel)]="filtro"
 />
 
 <!-- Tabla de Clientes -->
-<table class="table table-hover table-bordered align-middle">
+ <table class="table table-hover table-bordered align-middle">
   <thead class="table-light">
     <tr class="text-center">
-      <th>Cliente</th>   
-      <th>Cédula</th>       
-      <th>Fecha de Nacimiento</th>
-      <th>Teléfono</th>
-      <th>Correo Electrónico</th>
-      <th>Dirección</th>
-      <th>Contacto Emergencia</th>
-      <th>Activo</th>
-      <th>Acciones</th>
+      <th>{{ 'clients.header.client' | translate }}</th>   
+      <th>{{ 'clients.header.idCard' | translate }}</th>       
+      <th>{{ 'clients.header.birthDate' | translate }}</th>
+      <th>{{ 'clients.header.phone' | translate }}</th>
+      <th>{{ 'clients.header.email' | translate }}</th>
+      <th>{{ 'clients.header.address' | translate }}</th>
+      <th>{{ 'clients.header.emergencyContact' | translate }}</th>
+      <th>{{ 'clients.header.active' | translate }}</th>
+      <th>{{ 'clients.header.actions' | translate }}</th>
     </tr>
   </thead>
-  
+
   <tbody>
     <tr *ngFor="let cliente of filtrarClientes()" class="align-middle">
-  
+
       <!-- Cliente: Imagen + Nombre juntos -->
       <td class="d-flex align-items-center gap-2">
-        <img 
-  [src]="cliente.imagenRuta || 'https://cdn-icons-png.flaticon.com/512/847/847969.png'" 
-  (error)="cliente.imagenRuta = 'https://cdn-icons-png.flaticon.com/512/847/847969.png'"
-  class="rounded-circle"
-  alt="Foto Cliente"
-  style="width: 50px; height: 50px; object-fit: cover; border: 1px solid #ccc;"
->
+        <img [src]="cliente.imagenRuta || 'https://cdn-icons-png.flaticon.com/512/847/847969.png'"
+             (error)="cliente.imagenRuta = 'https://cdn-icons-png.flaticon.com/512/847/847969.png'"
+             class="rounded-circle"
+             alt="Foto Cliente"
+             style="width: 50px; height: 50px; object-fit: cover; border: 1px solid #ccc;">
 
-      
+
         <span class="fw-bold">{{ cliente.nombre }} {{ cliente.apellidos }}</span>
       </td>
-  
+
       <!-- Cédula -->
       <td class="text-center">{{ cliente.idPersona }}</td>
-  
+
       <!-- Fecha de Nacimiento -->
       <td class="text-center">{{ cliente.fechaNacimiento | date:'dd/MM/yyyy' }}</td>
-  
+
       <!-- Teléfono -->
       <td class="text-center">{{ cliente.telefono }}</td>
-  
+
       <!-- Correo Electrónico -->
       <td class="text-center">{{ cliente.correoElectronico }}</td>
-  
+
       <!-- Dirección -->
       <td class="text-center">{{ cliente.direccion || '-' }}</td>
-  
+
       <!-- Contacto Emergencia -->
       <td class="text-center">
-        {{ cliente.nombreContactoEmergencia || '-' }}<br/>
+        {{ cliente.nombreContactoEmergencia || '-' }}<br />
         <small>{{ cliente.telContactoEmergencia || '-' }}</small>
       </td>
-  
+
       <!-- Activo -->
       <td class="text-center">
-        <span class="badge bg-success" *ngIf="cliente.activo">Sí</span>
-        <span class="badge bg-secondary" *ngIf="!cliente.activo">No</span>
+        <span class="badge bg-success" *ngIf="cliente.activo">{{ 'clients.activeYes' | translate }}</span>
+        <span class="badge bg-secondary" *ngIf="!cliente.activo">{{ 'clients.activeNo' | translate }}</span>
       </td>
-  
-     <!-- Acciones -->
-<td class="text-center">
-  <button 
-    class="btn btn-sm btn-outline-primary me-2 d-flex align-items-center justify-content-center gap-1"
-    (click)="abrirModal(cliente)">
-    <i class="bi bi-pencil-square"></i> Editar
-  </button>
 
-  <button 
-    class="btn btn-sm btn-outline-danger d-flex align-items-center justify-content-center gap-1"
-    (click)="cliente.idCliente && eliminarCliente(cliente.idCliente)">
-    <i class="bi bi-trash3"></i> Eliminar
-  </button>
-</td>
+      <!-- Acciones -->
+      <td class="text-center">
+        <button class="btn btn-sm btn-outline-primary me-2 d-flex align-items-center justify-content-center gap-1"
+                (click)="abrirModal(cliente)">
+          <i class="bi bi-pencil-square"></i> {{ 'clients.edit' | translate }}
+        </button>
 
-  
+        <button class="btn btn-sm btn-outline-danger d-flex align-items-center justify-content-center gap-1"
+                (click)="cliente.idCliente && eliminarCliente(cliente.idCliente)">
+          <i class="bi bi-trash3"></i> {{ 'clients.delete' | translate }}
+        </button>
+      </td>
+
+
     </tr>
   </tbody>
-  
-    
-    
-  </table>
-  
+
+
+
+</table>
+
 <!-- Fondo oscuro cuando modal está activo -->
 <div *ngIf="mostrarModal" class="modal-backdrop show fade d-block"></div>
 
@@ -104,14 +99,13 @@
     <div class="modal-content p-4 rounded-4 shadow-sm">
       <div class="modal-header border-0">
         <h5 class="modal-title">
-          {{ clienteSeleccionado ? 'Editar Cliente' : 'Nuevo Cliente' }}
+          {{ clienteSeleccionado ? ('clients.editClient' | translate) : ('clients.newClient' | translate) }}
         </h5>
         <button type="button" class="btn-close" (click)="cerrarModal()"></button>
       </div>
       <div class="modal-body">
-        <app-cliente-insert-reactive 
-          [clienteAEditar]="clienteSeleccionado"
-          (guardado)="cerrarModal()">
+        <app-cliente-insert-reactive [clienteAEditar]="clienteSeleccionado"
+                                     (guardado)="cerrarModal()">
         </app-cliente-insert-reactive>
       </div>
     </div>

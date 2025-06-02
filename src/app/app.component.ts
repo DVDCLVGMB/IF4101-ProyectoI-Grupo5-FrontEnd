@@ -21,8 +21,8 @@ import { TranslationService } from './services/translate/translate.service';
   styles: [`
     .language-switcher {
       position: fixed;
-      top: 1rem;
-      right: 1rem;
+      bottom: 1rem;
+      left: 1rem;
       background: white;
       padding: 0.5rem;
       border-radius: 4px;
